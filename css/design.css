@@ -1,0 +1,16 @@
+
+
+[class*="col-"], footer {
+
+	padding-top: 10px;
+
+  background-color: silver;
+
+  border: 2px solid black;
+
+
+  line-height: 100px;
+
+  text-align: center;
+
+}

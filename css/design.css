@@ -1,16 +1,43 @@
 
 
-[class*="col-"], footer {
+#bloc-accueil-body {
 
-	padding-top: 10px;
+  margin-bottom: 10px;
+
+  margin-top: 10px;
+
+  margin-left: 42px;
+
+  padding-top: 10px;
 
   background-color: silver;
 
   border: 2px solid black;
 
+  border-radius: 6px;
 
   line-height: 100px;
 
   text-align: center;
 
+}
+
+#bloc-accueil-footer {
+
+	padding-left: 5px;
+}
+
+.logoAppli
+{
+	float:left;
+
+}
+body > .container
+{
+	padding-top: 40px;
+}
+
+button
+{
+	margin-left: 30px;	
 }

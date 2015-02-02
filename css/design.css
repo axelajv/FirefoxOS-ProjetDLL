@@ -1,10 +1,8 @@
 
 
-#bloc-accueil-body {
+#bloc-accueil-body-1, #bloc-accueil-body-1:active  {
 
   margin-bottom: 10px;
-
-  margin-top: 10px;
 
   margin-left: 42px;
 
@@ -16,15 +14,178 @@
 
   border-radius: 6px;
 
-  line-height: 100px;
+  line-height: 50px;
 
-  text-align: center;
+  text-align: Left;
+
+  color:#000;
+  font-family: Arial,sans-serif;
+
+  background: #F28F22;
+  background: -webkit-linear-gradient( #FF6A4F, #D33B11); 
+  background: -moz-linear-gradient( #FF6A4F, #D33B11); 
+  background: -ms-linear-gradient( #FF6A4F, #D33B11); 
+  background: -o-linear-gradient( #FF6A4F, #D33B11); 
+  background: linear-gradient( #F28F22, #BD5D19);
 
 }
+
+#bloc-accueil-body-1:hover{
+	background: #F79E46;
+	background: -webkit-linear-gradient( #F79E46, #C96928);
+	background: -moz-linear-gradient( #F79E46, #C96928);
+	background: -ms-linear-gradient( #F79E46, #C96928);
+	background: -o-linear-gradient( #F79E46, #C96928);
+	background: linear-gradient( #F79E46, #C96928);
+}
+
+#bloc-accueil-body-2 {
+
+  margin-bottom: 10px;
+
+  margin-left: 42px;
+
+  padding-top: 10px;
+
+  background-color: silver;
+
+  border: 2px solid black;
+
+  border-radius: 6px;
+
+  line-height: 50px;
+
+  text-align: Left;
+
+  color:#000;
+
+  background: #C53727;
+  background: -webkit-linear-gradient( #C53727, #A82B22); 
+  background: -moz-linear-gradient( #C53727, #A82B22); 
+  background: -ms-linear-gradient( #C53727, #A82B22); 
+  background: -o-linear-gradient( #C53727, #A82B22); 
+  background: linear-gradient( #C53727, #A82B22);
+
+}
+
+#bloc-accueil-body-2:hover {
+	background: #FF6A4F;
+	background: -webkit-linear-gradient( #FF6A4F, #D33B11); 
+	background: -moz-linear-gradient( #FF6A4F, #D33B11); 
+	background: -ms-linear-gradient( #FF6A4F, #D33B11); 
+	background: -o-linear-gradient( #FF6A4F, #D33B11); 
+	background: linear-gradient( #FF6A4F, #D33B11);
+	}
+
+#bloc-accueil-body-3 {
+
+  margin-bottom: 10px;
+
+  margin-left: 42px;
+
+  padding-top: 10px;
+
+  background-color: silver;
+
+  border: 2px solid black;
+
+  border-radius: 6px;
+
+  line-height: 50px;
+
+  text-align: Left;
+
+  color:#000;
+
+  background: #D34F8E;
+  background: -webkit-linear-gradient( #D34F8E, #A9014B); 
+  background: -moz-linear-gradient( #D34F8E, #A9014B); 
+  background: -ms-linear-gradient( #D34F8E, #A9014B); 
+  background: -o-linear-gradient( #D34F8E, #A9014B); 
+  background: linear-gradient( #D34F8E, #A9014B);
+
+}
+
+#bloc-accueil-body-3:hover{
+	background: #E256A0;
+	background: -webkit-linear-gradient( #E256A0, #BC1766);
+	background: -moz-linear-gradient( #E256A0, #BC1766);
+	background: -ms-linear-gradient( #E256A0, #BC1766);
+	background: -o-linear-gradient( #E256A0, #BC1766);
+	background: linear-gradient( #E256A0, #BC1766);
+	}	
+
+#bloc-accueil-body-4 {
+
+  margin-bottom: 10px;
+
+  margin-left: 42px;
+
+  padding-top: 10px;
+
+  background-color: silver;
+
+  border: 2px solid black;
+
+  border-radius: 6px;
+
+  line-height: 50px;
+
+  text-align: left;
+
+  color:#000;
+
+  background: #91BD09;
+  background: -webkit-linear-gradient( #91BD09, #4E9939); 
+  background: -moz-linear-gradient( #91BD09, #4E9939); 
+  background: -ms-linear-gradient( #91BD09, #4E9939); 
+  background: -o-linear-gradient( #91BD09, #4E9939); 
+  background: linear-gradient( #91BD09, #4E9939);
+
+}
+
+#bloc-accueil-body-4:hover{
+	background: #A3C416;
+	background: -webkit-linear-gradient( #A3C416, #55A53C);
+	background: -moz-linear-gradient( #A3C416, #55A53C);
+	background: -ms-linear-gradient( #A3C416, #55A53C);
+	background: -o-linear-gradient( #A3C416, #55A53C);
+	background: linear-gradient( #A3C416, #55A53C);
+	}
 
 #bloc-accueil-footer {
 
 	padding-left: 5px;
+}
+
+#button_accueil{
+
+	margin-left: 30px;
+
+}
+
+#text_bouton_1 > p {
+
+	margin-left: 18px;
+}
+
+#text_bouton_2 > p {
+
+	margin-left: -7px;
+}
+
+#text_bouton_3 > p {
+
+	margin-left: 10px;
+}
+
+#text_bouton_4 > p {
+
+	margin-left: 10px;
+}
+
+.row {
+  margin-left: -30px;
 }
 
 .logoAppli
@@ -32,12 +193,10 @@
 	float:left;
 
 }
+
 body > .container
 {
 	padding-top: 40px;
 }
 
-button
-{
-	margin-left: 30px;	
-}
+

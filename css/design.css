@@ -1,5 +1,6 @@
 
 
+
 #bloc-accueil-body-1, #bloc-accueil-body-1:active  {
 
   margin-bottom: 10px;
@@ -10,15 +11,15 @@
 
   background-color: silver;
 
-  border: 2px solid black;
+  border: 2px solid;
 
   border-radius: 6px;
 
   line-height: 50px;
 
-  text-align: Left;
+  text-align: left;
 
-  color:#000;
+  color: white;
   font-family: Arial,sans-serif;
 
   background: #F28F22;
@@ -49,7 +50,7 @@
 
   background-color: silver;
 
-  border: 2px solid black;
+  border: 2px solid;
 
   border-radius: 6px;
 
@@ -57,7 +58,7 @@
 
   text-align: Left;
 
-  color:#000;
+  color: white;
 
   background: #C53727;
   background: -webkit-linear-gradient( #C53727, #A82B22); 
@@ -87,15 +88,15 @@
 
   background-color: silver;
 
-  border: 2px solid black;
+  border: 2px solid;
 
   border-radius: 6px;
 
   line-height: 50px;
 
-  text-align: Left;
+  text-align: left;
 
-  color:#000;
+  color: white;
 
   background: #D34F8E;
   background: -webkit-linear-gradient( #D34F8E, #A9014B); 
@@ -125,7 +126,7 @@
 
   background-color: silver;
 
-  border: 2px solid black;
+  border: 2px solid;
 
   border-radius: 6px;
 
@@ -133,7 +134,7 @@
 
   text-align: left;
 
-  color:#000;
+  color: white;
 
   background: #91BD09;
   background: -webkit-linear-gradient( #91BD09, #4E9939); 
@@ -171,7 +172,7 @@
 
 #text_bouton_2 > p {
 
-	margin-left: -7px;
+	margin-left: -10px;
 }
 
 #text_bouton_3 > p {
@@ -197,6 +198,43 @@
 body > .container
 {
 	padding-top: 40px;
+}
+
+
+
+
+
+
+
+
+#bloc-plan-1  {
+
+   margin-bottom: 10px;
+
+  margin-left: 42px;
+
+  padding-top: 10px;
+
+  background-color: silver;
+
+  border: 2px solid;
+
+  border-radius: 6px;
+
+  line-height: 50px;
+
+  text-align: left;
+
+  color: white;
+  font-family: Arial,sans-serif;
+
+  background: #F28F22;
+  background: -webkit-linear-gradient( #FF6A4F, #D33B11); 
+  background: -moz-linear-gradient( #FF6A4F, #D33B11); 
+  background: -ms-linear-gradient( #FF6A4F, #D33B11); 
+  background: -o-linear-gradient( #FF6A4F, #D33B11); 
+  background: linear-gradient( #F28F22, #BD5D19);
+
 }
 
 

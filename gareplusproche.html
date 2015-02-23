@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="css/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="css/gareplusproche.css" />
+    <STYLE type="text/css">
+
+  	#clear-wps {
+    position:absolute;
+    bottom: 3px;
+    left: 10px;
+	}
+  </STYLE>
+</head>
+<body>
+	<div id="chargement"></div>
+	<div id="titre"></div>
+    <div id="map" ><input id="bouton" type="submit" value="Afficher l'itineraire" onclick="Afficher()"></div>
+	
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <script src="dist/leaflet-routing-machine.js"></script>
+    <script src="dist/Control.Geocoder.js"></script>
+	<script src="dist/Leaflet.AccuratePosition.js"></script>
+	<script src="dist/jquery-1.11.2.js"></script>
+
+
+
+
+    <script>
+	  
+	function Afficher() {
+			$(".leaflet-routing-container").toggle();
+			$(".leaflet-routing-container").css('margin-top',50);
+	
+		}
+
+	
+	var map = L.map('map');
+	
+	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+
+
+
+	/*
+	
+		function onAccuratePositionError (e) {
+			addStatus(e.message, 'error');
+		}
+
+		function onAccuratePositionProgress (e) {
+			var message = 'Progressing … (Accuracy: ' + e.accuracy + ')';
+			addStatus(message, 'progressing');
+		}
+		
+	*/
+		
+		function onAccuratePositionFound (e) {
+			var message = 'Most accurate position found (Accuracy: ' + e.accuracy + ')';
+			var Origine = e.latlng
+			var Min=0;
+			var LongitudeMin;
+			var LatitudeMin;
+			var i=0;
+			var Nom="Mohamed";
+			//addStatus(message, 'done');
+
+			  $.getJSON('json/Station.json', function(donnees) {
+				$.each( donnees, function( key, val ) {
+				
+					var Cible = L.latLng(val.Latitude,val.Longitude);
+					var Distance=Origine.distanceTo(Cible);
+				
+				//	$('#status').append('<p><b>Nom</b> : ' + val.Nom +' Distance:' + Distance +'</p>');
+					if (Distance < Min || i==0) {
+						i=1;
+						Min=Distance;
+						LongitudeMin=val.Longitude;
+						LatitudeMin=val.Latitude;
+				
+						Nom=val.Nom;
+					
+					}
+				});
+
+
+				
+				var it = L.Routing.control({
+					waypoints: [
+						e.latlng,
+						L.latLng(LatitudeMin, LongitudeMin)
+					],
+					routeWhileDragging: true,
+					language:'fr'
+		
+				
+				}).addTo(map);
+
+
+				//it.setWaypoints([]);
+			
+					$('#titre').append('<h1> '+ Nom +' </h1>');
+				 	
+			  });
+			  
+			  
+			
+			document.getElementById("chargement").id = "finchargement";
+
+		}
+/*
+		function addStatus (message, className) {
+			//var ul = document.getElementById('status'),
+				li = document.createElement('li');
+			li.appendChild(document.createTextNode(message));
+			ul.className = className;
+			ul.appendChild(li);
+		}
+*/
+//		map.on('accuratepositionprogress', onAccuratePositionProgress);
+		map.on('accuratepositionfound', onAccuratePositionFound);
+	//	map.on('accuratepositionerror', onAccuratePositionError);
+
+		map.findAccuratePosition({
+			maxWait: 10000,
+			desiredAccuracy: 20
+		});	
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+html, body, .container {
+
+	height: 100%;
+
+  background: #91BD09;
+  background: -webkit-linear-gradient( #91BD09, #4E9939); 
+  background: -moz-linear-gradient( #91BD09, #4E9939); 
+  background: -ms-linear-gradient( #91BD09, #4E9939); 
+  background: -o-linear-gradient( #91BD09, #4E9939); 
+  background: linear-gradient( #91BD09, #4E9939);
+}
+
+body {
+  
+	padding: 0;
+	margin: 0;
+
+}
+
+
+
+.leaflet-routing-container {
+  margin-top: 50px;
+  display: none;
+
+}
+
+
+#bouton {
+  cursor:pointer;
+  font-size: 14px;
+  z-index: 100;
+  position: absolute;
+  right: 5%;
+  top: 3%;
+}
+
+.leaflet-routing-container {
+
+display: none;
+
+}
+
+h1 { 
+text-align:center;
+  color: white;
+}
+
+#finchargement{
+display:none;
+}
+
+#chargement{
+
+
+background: #91BD09;
+background-image: url(../images/progress.gif);
+background-repeat: no-repeat;
+background-position: center ;
+background-size: 100px 100px;
+height: 100%;
+width:100%;
+z-index: 10;
+position:absolute;
+
+
+
+}
+
+#map {
+height: 100%;
+}

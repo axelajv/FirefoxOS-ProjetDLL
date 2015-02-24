@@ -2,12 +2,7 @@ html, body, .container {
 
 	height: 100%;
 
-  background: #91BD09;
-  background: -webkit-linear-gradient( #91BD09, #4E9939); 
-  background: -moz-linear-gradient( #91BD09, #4E9939); 
-  background: -ms-linear-gradient( #91BD09, #4E9939); 
-  background: -o-linear-gradient( #91BD09, #4E9939); 
-  background: linear-gradient( #91BD09, #4E9939);
+
 }
 
 body {
@@ -17,7 +12,44 @@ body {
 
 }
 
+
+
+
+.btn-default {
+
+  margin: 0 auto;
+  color: silver;
  
+  border-color: silver;
+
+  background: #91BD09;
+  background: -webkit-linear-gradient( #91BD09, #4E9939); 
+  background: -moz-linear-gradient( #91BD09, #4E9939); 
+  background: -ms-linear-gradient( #91BD09, #4E9939); 
+  background: -o-linear-gradient( #91BD09, #4E9939); 
+  background: linear-gradient( #91BD09, #4E9939);
+}
+
+
+
+.navbar {
+
+  min-height: 0px;
+  margin-bottom: 0px;
+  border-radius: 0px;
+
+  background: #91BD09;
+  background: -webkit-linear-gradient( #91BD09, #4E9939); 
+  background: -moz-linear-gradient( #91BD09, #4E9939); 
+  background: -ms-linear-gradient( #91BD09, #4E9939); 
+  background: -o-linear-gradient( #91BD09, #4E9939); 
+  background: linear-gradient( #91BD09, #4E9939);
+
+}
+
+
+
+
 .leaflet-routing-container {
   margin-top: 50px;
   display: none;
@@ -47,13 +79,14 @@ text-align:center;
 
 #finchargement{
 display:none;
+
 }
 
 
 #chargement{
 
 
-background: #91BD09;
+background:white; 
 background-image: url(../images/progress.gif);
 background-repeat: no-repeat;
 background-position: center ;

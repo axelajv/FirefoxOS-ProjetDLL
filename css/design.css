@@ -1,5 +1,8 @@
 
-
+html, body{
+  
+  height: 100%;
+}
 
 #bloc-accueil-body-1, #bloc-accueil-body-1:active  {
 
@@ -182,7 +185,7 @@
 
 #text_bouton_4 > p {
 
-	margin-left: 10px;
+	margin-left: 5px;
 }
 
 .row {
@@ -207,7 +210,7 @@ body > .container
 
 
 
-#bloc-plan-1  {
+#bloc-plan {
 
    margin-bottom: 10px;
 
@@ -237,4 +240,32 @@ body > .container
 
 }
 
+#recherche-ligne {
+
+  margin-left: 10px;
+  text-align: center;
+
+}
+
+#icon-search{
+   padding-right: 0px;
+}
+
+
+#titre-ligne
+{
+  text-align: center;
+}
+
+#image-metro{
+border: thin solid black;  
+height: 50%; 
+width: 100%;
+overflow: scroll;
+}
+
+#image-metro img{
+height: 100%;
+
+}
 

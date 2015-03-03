@@ -5,22 +5,22 @@ $(function() {
       "RER C",
       "RER D",
       "RER E",
-      "Métro 1",
-      "Métro 2",
-      "Métro 3",
-      "Métro 3 bis",
-      "Métro 4",
-      "Métro 5",
-      "Métro 6",
-      "Métro 7",
-      "Métro 7 bis",
-      "Métro 8",
-      "Métro 9",
-      "Métro 10",
-      "Métro 11",
-      "Métro 12",
-      "Métro 13",
-      "Métro 14"
+      "Metro 1",
+      "Metro 2",
+      "Metro 3",
+      "Metro 3 bis",
+      "Metro 4",
+      "Metro 5",
+      "Metro 6",
+      "Metro 7",
+      "Metro 7 bis",
+      "Metro 8",
+      "Metro 9",
+      "Metro 10",
+      "Metro 11",
+      "Metro 12",
+      "Metro 13",
+      "Metro 14"
     ];
     $( "#recherche-ligne" ).autocomplete({
       source: availableTags,
@@ -31,7 +31,17 @@ $(function() {
     },
 
     select : function(event, ui){
-        alert( ui.item.value ); // lance une alerte indiquant la valeur de la proposition
+
+        //alert( ui.item.value );
+
+        var metro = ui.item.value;
+
+        if ( metro=="Metro 1")
+        {
+          window.location.replace("affiche-metro.html");
+        }
+        
+        //alert( ui.item.value ); // lance une alerte indiquant la valeur de la proposition
     }
 
     });

@@ -247,10 +247,6 @@ body > .container
 
 }
 
-#icon-search{
-   padding-right: 0px;
-}
-
 
 #titre-ligne
 {
@@ -266,6 +262,5 @@ overflow: scroll;
 
 #image-metro img{
 height: 100%;
-
 }
 

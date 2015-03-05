@@ -9,14 +9,16 @@
       <script src="bootstrap/js/bootstrap.min.js"></script>
       <link href="css/design.css" rel="stylesheet">
       
+          
       
+      <link rel="stylesheet" href="css/jquery-ui.css">
+      <link rel="stylesheet" href="css/jquery-ui-2.css" />
+
       <script src="js/jquery-1.10.2.js"></script>
       <script src="js/jquery-ui.js"></script>
       <script src="js/source-data.js"></script>
-      <script type="text/javascript">
-     
 
-      </script>
+
     </head>
     <body>
     
@@ -26,24 +28,37 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
-           <p><img src="images/logo2.png" class="logoappli" alt="Image flottante" /> Métransilien</p>
+           <p><img id="testimage" src="images/logo2.png" class="logoappli" alt="Image flottante" /> Métransilien</p>
           </a>
+
+          <a href="reseau-metro.html">
+          <button  id="button_return" type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+          </button>
+          </a>
+
         </div>
       </div>
     </nav>
 
 
-  <div class="container">
+  <div id="searchBar" class="container">
     <div class="row">
-      
         <form class="form-inline">
           <span class="col-xs-12 col-sm-12 col-md-12 col-ld-12">
-            <input for="recherche" id="recherche-ligne" type="text" class="form-control" placeholder="Rechercher une ligne">
+            <input id="autocomplete" autocomplete="on" type="text" class="form-control" placeholder="Rechercher une ligne">
           </span>
         </form>
       
     </div>
   </div>
+
+  <h1 id="titre-ligne">Ligne N</h1>
+  <div id="image-metro">
+    <img id="image-metro2" src="#" />
+   </div>
+
+  
 
   <!-- Footer -->
   <nav class="navbar navbar-default navbar-fixed-bottom">

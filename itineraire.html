@@ -15,8 +15,12 @@
 	<script src="bootstrap/js/bootstrap-datetimepicker.js"></script>
 	<script src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="bootstrap/js/collapse.js.min.js"></script>
-	<script src="bootstrap/js/collapse.js.min.js"></script>
+	<script src="js/Itineraire.js"></script>
+	<script src="jquery.formatDateTime.min.js"></script>
 	
+	<script type="text/javascript">	
+
+	</script>
 	
  
       
@@ -37,31 +41,33 @@
       </div>
     </nav>
 
-
+<div id='form'>
    <div class="container">
     <div class="row">
       <div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2"><div class="input-group">
 		<span class="input-group-addon" id="basic-addon1">Départ : </span>
-		<input type="text" class="form-control" placeholder="Stations" aria-describedby="basic-addon1">
+		<input id="depart" type="text" class="form-control" placeholder="Stations" aria-describedby="basic-addon1">
 		</div></div> 
       
     </div>
+	
+	
     <div class="row">
      <br> <div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2"><div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Arrivée : </span>
-  <input type="text" class="form-control" placeholder="Stations" aria-describedby="basic-addon1">
+  <input id="arrivee" type="text" class="form-control" placeholder="Stations" aria-describedby="basic-addon1">
 </div>
 </div> 
  </div>
  
  
  <br />
- 
+ <input type='button' id='goss' />
  <div class="row">
      <br>
 	 <div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2">
 		<div class="input-group">
-		<button id="go" type="button" class="btn btn-primary">Partir maintenant</button>
+		<button id="go" type="button" class="btn btn-primary" onClick="go()">Partir maintenant</button>
 		</div>
 	</div> 
  </div>
@@ -81,18 +87,27 @@
         </div>
        
            <script type="text/javascript">
-    $(function () {
+ $(function () {
 $('#datetimepicker1').datetimepicker({
 locale: 'fr',
 sideBySide: true
 });
 });
- 
+
         </script>
     </div>
 
     </div>
     </div>
+</div>
+
+<div id='result' style='display:none'>
+
+
+
+
+
+</div>
 
   <!-- Footer -->
   <nav class="navbar navbar-default navbar-fixed-bottom">

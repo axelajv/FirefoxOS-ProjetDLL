@@ -1,9 +1,21 @@
-function  Itineraire(depart,arrivee, date) {
+function  Itineraire(depart,arrivee, date, type) {
+if(type!='')
+{
+	var $url = 'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:'+depart+'&to=stop_area:'+arrivee+'&datetime='+date+'&max_duration_to_pt=3000&datetime_represents='+type;
+	console.log($url);
+}
+
+else
+{
+	var $url = 'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:'+depart+'&to=stop_area:'+arrivee+'&datetime='+date+'&max_duration_to_pt=3000';
+	console.log($url);
+}
+
  $.ajax({
       beforeSend: function(request) {
         request.setRequestHeader("Authorization", '0da1aeae-b764-4b74-85fc-be27c8546a69' );
           },
-       url : 'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:'+depart+'&to=stop_area:'+arrivee+'&datetime='+date+'&max_duration_to_pt=3000',
+       url : $url,
        type : 'GET',
        dataType : 'json',
        success : function(data){ 
@@ -26,6 +38,8 @@ function  go() {
 
 	var depart = $('#depart').val();
 	var arrivee = $('#arrivee').val();
+	if(depart !='' || arrivee != '')
+	{
 	console.log(depart,arrivee);
 	var d = new Date();
 	var date = d.toISOString();
@@ -35,7 +49,52 @@ function  go() {
 	date= date.replace(".", "");
 	date = date.substring(0, 13)
 	console.log(date);
-	Itineraire(depart,arrivee,date);
+	Itineraire(depart,arrivee,date,'');
+	}
+	
+	else
+		alert('veuillez renseigner correctement la station de départ et d\'arrivée');
+	
+	
+}
+
+
+function  goafter() {
+
+	var depart = $('#depart').val();
+	var arrivee = $('#arrivee').val();
+	var dateTime = $('#dateTime').val()
+	console.log(dateTime);
+	var type = $('#type input:radio:checked').val();
+	console.log(type);
+	var date = $.formatDateTime('yyddmmThhii', new Date(dateTime));
+	if(dateTime !='')
+	{
+		console.log(dateTime);
+		Itineraire(depart,arrivee,date,type);
+	}
+	
+	else
+		alert('Veuillez selectionner une date');
+	
+	
+}
+
+
+
+
+function selectDate() {
+var depart = $('#depart').val();
+	var arrivee = $('#arrivee').val();
+	if(depart !='' || arrivee != '')
+	{
+		$('.row').css('display','none');
+		$('#plustard').css('display','block');
+	}
+	
+	else
+		alert('veuillez renseigner correctement la station de départ et d\'arrivée');
+
 }
 
 
@@ -49,9 +108,8 @@ function secondsTominutes(secs)
     var divisor_for_seconds = divisor_for_minutes % 60;
     var seconds = Math.ceil(divisor_for_seconds);
    
-    
-       
-       
-    };
     return minutes;
 }
+
+
+

@@ -81,8 +81,6 @@ function  goafter() {
 }
 
 
-
-
 function selectDate() {
 var depart = $('#depart').val();
 	var arrivee = $('#arrivee').val();
@@ -111,5 +109,11 @@ function secondsTominutes(secs)
     return minutes;
 }
 
+$(document).ready(function(){
+	$('input.typeahead').typeahead({
+		name: 'accounts',
+		local: ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen']
+	});
+}); 
 
 

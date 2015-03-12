@@ -1,0 +1,80 @@
+<html>
+<head>
+<script src="js/jquery.js"></script>
+<script src="js/jquery/jquery.ui.core.min.js"></script>
+<script src="js/jquery/jquery.ui.widget.min.js"></script>
+<script src="js/jquery/jquery.ui.position.min.js"></script>
+<script src="js/jquery/jquery.ui.autocomplete.min.js"></script>
+
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script async src="//code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>        
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" /> 
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+
+  <style>
+    /* autocomplete adds the ui-autocomplete-loading class to the textbox when it is _busy_ */
+    #autocomplete.ui-autocomplete-loading {
+      background-image: url(loading.gif);
+      background-position: right center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <form action="http://www.rottentomatoes.com/search/" target="_blank">
+    <input id="autocomplete" type="text" placeholder="Arrêt" name="search" autocomplete="on">
+  </form>
+  <script>
+    /*
+     * jQuery UI Autocomplete: Load Data via AJAX
+     * http://salman-w.blogspot.com/2013/12/jquery-ui-autocomplete-examples.html
+     */
+    $(function() {
+      $("#autocomplete").autocomplete({
+        delay: 100,
+        minLength: 3, 
+        maxLength: 3,
+
+        source: function(request, response) {
+        $.ajax({
+        beforeSend: function(request) {
+        request.setRequestHeader("Authorization", atob("tnhtn230:reFUcHa8"));
+
+          },
+          dataType: "xml",
+          url: 'http://api.transilien.com/gare/87681007/depart/',
+          success: function(data) {
+            // data is an array of objects and must be transformed for autocomplete to use
+            var array = data.error ? [] : $.map(data.stop_points, function(m) {
+              return {
+                label: m.name
+              };
+            });
+            alert(response(array));
+          }
+          });
+        },
+        focus: function(event, ui) {
+          // prevent autocomplete from updating the textbox
+          event.preventDefault();
+        },
+        select: function(event, ui) {
+          // prevent autocomplete from updating the textbox
+          event.preventDefault();
+          // navigate to the selected item's url
+          window.open(ui.item.url);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

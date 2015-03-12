@@ -8,7 +8,7 @@
       <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
       <script src="bootstrap/js/bootstrap.min.js"></script>
-      <link href="css/design.css" rel="stylesheet">
+      <link href="css/index.css" rel="stylesheet">
       <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
           <!--[if lt IE 9]>
@@ -20,76 +20,52 @@
     
     <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <div class="navbar-header">
+        
           <a class="navbar-brand" href="#">
            <p><img src="images/logo2.png" class="logoappli" alt="Image flottante" /> Métransilien</p>
           </a>
-          
 
-        </div>
       </div>
     </nav>
 
+   <div id="contenu" class="container">
+    <a href="plan.html"> <div class="row" id="bloc-accueil-body-1" class="col-xs-10 col-sm-10 col-md-10">Plan</div> </a>
+     <a href="next-train.html"> <div class="row" id="bloc-accueil-body-2" class="col-xs-10 col-sm-10 col-md-10">Prochains trains</div> </a>
+     <a href="itineraire.html"> <div class="row" id="bloc-accueil-body-3" class="col-xs-10 col-sm-10 col-md-10">Itinéraires</div> </a>
+    <a href="gareplusproche.html"> <div class="row" id="bloc-accueil-body-4" class="col-xs-10 col-sm-10 col-md-10">Gare la plus proche</div> </a>
+    </div>
 
-   <div id="container-accueil" class="container">
-    <div class="row">
-      <a href="plan.html"> <div id="bloc-accueil-body-1" class="col-xs-10 col-sm-10 col-md-10">Plan</div> </a>
-      <a href="next-train.html"> <div id="bloc-accueil-body-2" class="col-xs-10 col-sm-10 col-md-10">Prochains trains</div> </a>
-    </div>
-    <div class="row">
-      <a href="itineraire.html"> <div id="bloc-accueil-body-3" class="col-xs-10 col-sm-10 col-md-10">Itinéraires</div> </a>
-      <a href="gareplusproche.html"> <div id="bloc-accueil-body-4" class="col-xs-10 col-sm-10 col-md-10">Gare la plus proche</div> </a>
-    </div>
-    </div>
+
+
+
 
   <!-- Footer -->
-  <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
+  <nav class="navbar-fixed-bottom">
+    <div class="container-fluid">
       <div class="row">
-        
-          <div id="bloc-accueil-footer" class="col-xs-3">
-          <a href="index.html">
-          <button  id="button_accueil" type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-          </button>
-          </a>
-        
-        </div>
-        <div id="bloc-accueil-footer" class="col-xs-3">
-          <button id="button_accueil" type="button" class="btn btn-default" aria-label="Left Align">
-            <span  class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
-          </button>
-        </div>
-        <div id="bloc-accueil-footer" class="col-xs-3">
-          <button id="button_accueil" type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-          </button>
-        </div>
-        <div id="bloc-accueil-footer" class="col-xs-3">
-          <button id="button_accueil" type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-          </button>
-        </div>
+       
+    <a href="plan.html" >
+      
+        <div id="btn-plan" class="col-xs-3 col-sm-3 col-md-3"> <span class="glyphicon glyphicon-home"></span></div> 
+      
+      
+    </a>
+
+
+
+
+    <a href="next-train.html"> <div id="btn-nexttrain" class="col-xs-3 col-sm-3 col-md-3"><span class="glyphicon glyphicon-home" ></span></div> </a>
+    <a href="itineraire.html"> <div id="btn-itineraire" class="col-xs-3 col-sm-3 col-md-3"><span class="glyphicon glyphicon-road" ></span></div> </a>
+    <a href="gareplusproche.html"> <div id="btn-gareplusproche" class="col-xs-3 col-sm-3 col-md-3"><span class="glyphicon glyphicon-blackboard" ></span></div> </a>
+       
+       
       </div>
+       <div class="row">
+         <div  class="col-xs-3 col-sm-3 col-md-3"><p id="btn-plan"> Plan</p></div> 
+     </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div id="text_bouton_1" class="col-xs-3"> 
-        <p>Accueil</p>
-        </div>
-        <div id="text_bouton_2" class="col-xs-3">
-        <p>Prochainstrains</p>
-        </div>
-        <div id="text_bouton_3" class="col-xs-3">
-         <p>Actualités</p> 
-        </div>
-        <div id="text_bouton_4" class="col-xs-3">
-        <p>Itinéraires</p>
-        </div>
-      </div>
-    </div>
-
+  </nav>
 
   </nav>
   </body>

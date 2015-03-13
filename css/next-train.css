@@ -1,0 +1,32 @@
+
+html, body , div{
+  
+  height: 100%;
+}
+
+
+#tab {
+font-family:"Tauri",sans-serif;
+  display:table-cell;
+  width:100%;
+  padding:10px;
+}
+
+
+#image-metro{
+border: thin solid black;  
+height: 50%; 
+width: 100%;
+overflow: scroll;
+display: none;
+}
+
+#image-metro img{
+height: 100%;
+}
+
+
+#autocomplete {
+  margin-left: 10px;
+  text-align: center;
+}

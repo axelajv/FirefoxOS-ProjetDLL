@@ -52,7 +52,27 @@ height: 100%;
 }
 
 
-#autocomplete {
-  margin-left: 10px;
-  text-align: center;
+#gareD {
+	background-color: :red;
+  	margin-left: 10px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
 }
+
+
+li {
+
+font-size: 14px;
+
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
+
+
+
+
+
+
+
+

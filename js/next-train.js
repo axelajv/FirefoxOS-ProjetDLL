@@ -1,6 +1,27 @@
-$(document).ready(function(){
-$( "#bc" ).on('click',nav);
-});
+
+  $(function() {
+
+
+
+    $.getJSON('json/StationNavitia.json', function(donnees) {
+      
+
+    $("#gareD").autocomplete({
+      source: donnees, 
+      minLength : 1,
+     
+      select: function(event, ui) {
+          
+       var IdStation=ui.item.id;
+       nav(IdStation);
+
+      }
+    });
+
+ });
+
+
+  });
 
 
 
@@ -16,7 +37,7 @@ Date.prototype.yyyymmddT = function() {
 function HeureM(date){
 
   var result=date.substr(9,4);
-  var heure=result.substr(1,2);
+  var heure=result.substr(0,2);
   var min=result.substr(2,2);
   result=heure+":"+min;
   return result;
@@ -24,15 +45,16 @@ function HeureM(date){
 
 
 
-function nav(){
+function nav(IdStation){
 
+  
     
     d = new Date();
      
      var maintenant= d.yyyymmddT();
 
 
-     var MyURL ='https://api.navitia.io/v1/coverage/fr-idf/stop_areas/stop_area:TRN:SA:DUA8768100/departures?from_datetime='+maintenant+'&duration=1800';
+     var MyURL ='https://api.navitia.io/v1/coverage/fr-idf/stop_areas/stop_area:'+IdStation+'/departures?from_datetime='+maintenant+'&duration=1800';
    
      $.ajax({
         beforeSend: function(request) {

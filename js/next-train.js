@@ -1,12 +1,6 @@
-
-
-
 $(document).ready(function(){
 $( "#bc" ).on('click',nav);
 });
-
-
-
 
 
 
@@ -19,10 +13,14 @@ Date.prototype.yyyymmddT = function() {
    return yyyy + (mm[1]?mm:"0"+mm[0]) + (dd[1]?dd:"0"+dd[0])+"T"+(hh[1]?hh:"0"+hh[0])+(mi[1]?mi:"0"+mi[0]); // 20150315T0900
 };
 
+function HeureM(date){
 
-
-
-
+  var result=date.substr(9,4);
+  var heure=result.substr(1,2);
+  var min=result.substr(2,2);
+  result=heure+":"+min;
+  return result;
+}
 
 
 
@@ -34,7 +32,7 @@ function nav(){
      var maintenant= d.yyyymmddT();
 
 
-     var MyURL ='https://api.navitia.io/v1/coverage/fr-idf/stop_areas/stop_area:RTP:SA:3759108/departures?from_datetime='+maintenant+'&duration=1800';
+     var MyURL ='https://api.navitia.io/v1/coverage/fr-idf/stop_areas/stop_area:TRN:SA:DUA8768100/departures?from_datetime='+maintenant+'&duration=1800';
    
      $.ajax({
         beforeSend: function(request) {
@@ -53,7 +51,14 @@ function nav(){
             var DateDepart=data.departures[0].stop_date_time.departure_date_time;
 
             $.each(data.departures, function(i, dep) {
-                $("#divR").append("<div id='tab'><p>"+dep.route.direction.stop_point.name+"</p><p>"+dep.route.line.code+"</p><p>"+dep.route.line.name+"</p><p>"+dep.stop_date_time.departure_date_time+"</p></div>");
+
+              var heure=HeureM(dep.stop_date_time.departure_date_time);
+
+
+            $("#tabR").append("<tr id='tab'><td>"+heure+"</td><td>"+dep.route.line.code+"</td><td>"+dep.route.direction.stop_point.name+"</td><td>"+dep.route.line.name+"</td></tr>");
+           
+
+
             });
 
            

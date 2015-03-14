@@ -83,7 +83,7 @@ function nav(IdStation){
                        
 
             } else {
-                 $("#tabR").append("<tr id='tab'><td id='tdHeure'>"+heure+"</td><td id='tdLigne'>"+dep.route.line.code+"</td><td id='tdListe'><span>"+dep.route.direction.stop_point.name+"</span><div id='divEffet'><div id='divFixe'>"+dep.route.line.name+"</div></div></td></tr>");
+                   $("#tabR").append("<tr id='tab'><td id='tdHeure'>"+heure+"</td><td id='tdLigne'>"+dep.route.line.code+"</td><td id='tdNom'>"+dep.route.direction.stop_point.name+"</td><td id='tdListe'>"+dep.route.line.name+"</td></tr>");
                        
             }
 

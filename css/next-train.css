@@ -6,9 +6,10 @@ html, body , div{
 
 #divR {
 
-	width: 100%;
+	width: 95%;
     height: 60%;
-    overflow: scroll;
+    margin: auto;
+    overflow-y: scroll;
 }
 
 
@@ -39,6 +40,10 @@ background-color: #043A6B;
 }
 
 
+#ImageRER {
+  height: 2em;
+}
+
 #image-metro{
 border: thin solid black;  
 height: 50%; 
@@ -54,15 +59,50 @@ height: 100%;
 
 #gareD {
 	background-color: :red;
-  	margin-left: 10px;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 14px;
+	font-size: 12px;
+}
+
+#tdHeure {
+
+padding: 0.5em 0.5em 0.5em 0.5em ;
+vertical-align: middle;
+width: 20%;
+
+
+}
+
+#tdLigne{
+
+padding: 0.5em 0.5em 0.5em 0.5em ;
+vertical-align: middle;
+width: 20%;
+
+
+}
+
+#tdNom{
+padding: 0.5em 0.5em 0.5em 0.5em ;
+
+font-size: 14px;
+white-space: nowrap;
+
 }
 
 
-li {
 
-font-size: 14px;
+#tdListe {
+padding: 0.5em 0.5em 0.5em 0.5em ;
+white-space: nowrap;
+text-align: left;
+}
+
+
+
+
+li , ul {
+
+font-size: 12px;
 
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 

@@ -67,23 +67,28 @@ function nav(IdStation){
             // data is an array of objects and must be transformed for autocomplete to use
             console.log(data);
 
-            var NomTrain =data.departures[0].route.direction.stop_point.name;
-            var NomLigne =data.departures[0].route.line.code;
-            var ListeStation=data.departures[0].route.line.name;
-            var DateDepart=data.departures[0].stop_date_time.departure_date_time;
+          //  var NomTrain =data.departures[0].route.direction.stop_point.name;
+          //  var NomLigne =data.departures[0].route.line.code;
+          //  var ListeStation=data.departures[0].route.line.name;
+           // var DateDepart=data.departures[0].stop_date_time.departure_date_time;
 
             $.each(data.departures, function(i, dep) {
 
               var heure=HeureM(dep.stop_date_time.departure_date_time);
+              var NomLigne =dep.route.line.code;
 
+            if (NomLigne=='A' || NomLigne=='B'|| NomLigne=='C' || NomLigne=='D' || NomLigne=='E' || NomLigne=='H'|| NomLigne=='J' || NomLigne=='K' || NomLigne=='L' || NomLigne=='N'|| NomLigne=='P' || NomLigne=='R' || NomLigne=='U') {
+                
+                 $("#tabR").append("<tr id='tab'><td id='tdHeure'>"+heure+"</td><td id='tdLigne'><img id='ImageRER' src='images/"+dep.route.line.code+".svg' alt='"+dep.route.line.code+"'/></td><td id='tdNom'>"+dep.route.direction.stop_point.name+"</td><td id='tdListe'>"+dep.route.line.name+"</td></tr>");
+                       
 
-            $("#tabR").append("<tr id='tab'><td>"+heure+"</td><td>"+dep.route.line.code+"</td><td>"+dep.route.direction.stop_point.name+"</td><td>"+dep.route.line.name+"</td></tr>");
-           
+            } else {
+                 $("#tabR").append("<tr id='tab'><td id='tdHeure'>"+heure+"</td><td id='tdLigne'>"+dep.route.line.code+"</td><td id='tdListe'><span>"+dep.route.direction.stop_point.name+"</span><div id='divEffet'><div id='divFixe'>"+dep.route.line.name+"</div></div></td></tr>");
+                       
+            }
 
-
+          
             });
-
-           
 
            // alert(DateDepart+'-----'+NomTrain+'-----'+NomLigne+'-----'+ListeStation);
 

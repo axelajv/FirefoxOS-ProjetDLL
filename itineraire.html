@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
     <link href="css/design.css" rel="stylesheet">
 	<script src="bootstrap/js/moment-with-locales.min.js"></script>
@@ -20,54 +20,7 @@
 	<script src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="js/jquery.formatDateTime.min.js"></script>
 	<script src="js/Itineraire.js"></script>
-	
-	
-	<script type="text/javascript">	
-
-	var dataTest;
-$.ajax({
-      beforeSend: function(request) {
-        request.setRequestHeader("Authorization", '0da1aeae-b764-4b74-85fc-be27c8546a69' );
-          },
-       url : 'https://api.navitia.io/v1/coverage/fr-idf/stop_areas',
-       type : 'GET',
-       dataType : 'json',
-       success : function(data){ 
-		dataTest = data;
-        console.log(data);
-       },
-       error : function(){
-          console.log('merde');
-
-       }
-
-    });
-	
-	
-	
-	$(function () {
-	   $('#demo1').typeahead({
-        source: [
-            { id: 1, name: 'Toronto' },
-            { id: 2, name: 'Montreal' },
-            { id: 3, name: 'New York' },
-            { id: 4, name: 'Buffalo' },
-            { id: 5, name: 'Boston' },
-            { id: 6, name: 'Columbus' },
-            { id: 7, name: 'Dallas' },
-            { id: 8, name: 'Vancouver' },
-            { id: 9, name: 'Seattle' },
-            { id: 10, name: 'Los Angeles' }
-        ]
-    });
-	});
-
-
-	</script>
-	
-	
- 
-      
+  
     </head>
 	
 	
@@ -85,20 +38,13 @@ $.ajax({
       </div>
     </nav>
 
-<!--<div id="the-basics">
-  <input class="typeahead" type="text" placeholder="States of USA">
-</div>!-->
 
- <div class="well span4">
-            <input id="demo1" type="text" class="span4" placeholder="Search cities..." autocomplete="off" />
-</div>
- 
- 
 	
 <div id='form'>
    <div class="container">
+   
     <div class="row">
-      <div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2"><div class="input-group">
+      <div id="bloc-accueil-body" class="col-xs-8 col-sm-8 col-md-8"><div class="input-group">
 		<span class="input-group-addon" id="basic-addon1">Départ : </span>
 		<input id="depart" type="text" class="form-control" placeholder="Stations" aria-describedby="basic-addon1" data-provide="typeahead">
 		</div></div> 
@@ -107,7 +53,7 @@ $.ajax({
 	
 	
     <div class="row">
-     <br> <div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2"><div class="input-group">
+     <br> <div id="bloc-accueil-body" class="col-xs-8 col-sm-8 col-md-8"><div class="input-group">
   <span class="input-group-addon" id="basic-addon1">Arrivée : </span>
   <input id="arrivee" type="text" class="form-control" placeholder="Stations" aria-describedby="basic-addon1" autocomplete="off">
 </div>
@@ -119,22 +65,21 @@ $.ajax({
 
  <div class="row">
      <br>
-	 <div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2">
-		<div class="input-group">
-		<button id="go" type="button" class="btn btn-primary" onClick="go()">Partir maintenant</button>
-		</div>
+	 
 	</div> 
  </div>
  <br>
   <div class="row">
-	 <div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2">
-	 <div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2">
-		<div class="input-group">
-		<button id="next" type="button" class="btn btn-primary" onClick="selectDate()">Partir plus tard</button>
+	
+		<div class="input-group" class="col-xs-8 col-sm-8 col-md-8">
+			<button id="go" type="button" class="btn btn-primary">Partir maintenant</button>
+			<button id="next" type="button" class="btn btn-primary">Partir plus tard</button>
 		</div>
-	</div> 
- </div>
- </div>
+		
+</div>
+	
+
+
  <br />
  <div id="plustard" style="display:none;">
  
@@ -161,7 +106,7 @@ $.ajax({
 	<div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2">
 	 <div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2">
 		<div class="input-group">
-		<button id="partir" type="button" class="btn btn-primary" onClick="goafter()">Partir</button>
+		<button id="partir" type="button" class="btn btn-primary">Partir</button>
 		</div>
 	</div> 
  </div>       
@@ -190,7 +135,7 @@ sideBySide: true,
 <div id='result' style='display:none'>
 
 
-
+ <table id="tabR" style="width:100%"></table>
 
 
 </div>

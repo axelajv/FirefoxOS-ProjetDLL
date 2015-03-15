@@ -1,0 +1,126 @@
+// Affiche le plan du métro en fonction de la ligne renseigné
+function affiche_transilien(ligne){
+
+  //On cache la barre de recherche
+  //var searchBar = document.getElementById('searchBar');
+  //searchBar.style.display = "none"; 
+
+  // On récupuère la div du titre et on le modifie
+  //var titre = document.getElementById('titre-ligne');
+  //titre.firstChild.data = "Ligne "+ligne
+  
+  //On affiche le titre
+  //titre.style.display = "block";
+
+  //On récupère le lien de l'image et on le modifie
+  var div_image = document.getElementById("image-transilien");
+  div_image.style.display = "block";
+
+  var image = document.getElementById("image-transilien2");
+  image.setAttribute('src', 'images/ligne_'+ligne+'.png');
+
+  //On affiche le bouton précédent
+  //var button_return = document.getElementById('button_return');
+  //button_return.style.display = "block";
+}
+
+
+function ligne_transilien(ligne){
+
+  var transilien = ligne;
+
+  if ( transilien=="Ligne A")
+    {
+      affiche_transilien("A");        
+    }
+  else if ( transilien=="Ligne B" )
+    {
+      affiche_transilien("B");   
+    }
+  else if ( transilien=="Ligne C" )
+    {
+      affiche_transilien("C");   
+    }      
+  else if ( transilien=="Ligne D" )
+      {
+        affiche_transilien("D");   
+      }
+  else if ( transilien=="Ligne E" )
+      {
+        affiche_transilien("E");   
+      }
+  else if ( transilien=="Ligne H" )
+      {
+        affiche_transilien("H");   
+      }
+  else if ( transilien=="Ligne K" )
+      {
+        affiche_transilien("K");   
+      }
+  else if ( transilien=="Ligne J" )
+      {
+        affiche_transilien("J");   
+      }
+  else if ( transilien=="Ligne L" )
+      {
+        affiche_transilien("L");   
+      }
+  else if ( transilien=="Ligne P" )
+      {
+        affiche_transilien("P");   
+      }
+  else if ( transilien=="Ligne T4" )
+      {
+        affiche_transilien("T4");   
+      }
+  else if ( transilien=="Ligne N" )
+      {
+        affiche_transilien("N");   
+      }
+  else if ( transilien=="Ligne R" )
+      {
+        affiche_transilien("R");   
+      }
+  else if ( transilien=="Ligne U" )
+      {
+        affiche_transilien("U");   
+      }
+
+}
+
+$(function() {
+    var availableTags = [
+      "Ligne H",
+      "Ligne K",
+      "Ligne J",
+      "Ligne L",
+      "Ligne P",
+      "Ligne T4",
+      "Ligne N",
+      "Ligne R",
+      "Ligne U"
+    ];
+    $( "#autocomplete" ).autocomplete({
+      delay: 100,
+
+      source: availableTags,
+
+      messages: {
+        noResults: '',
+        results: function() {}
+    },
+
+    select : function(event, ui){
+
+        // prevent autocomplete from updating the textbox
+        event.preventDefault();
+       
+
+        var transilien = ui.item.value;
+
+        ligne_transilien(transilien);
+        
+    }
+
+    });
+  });

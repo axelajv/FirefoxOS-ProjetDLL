@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-      <title>Métransilien</title>
+      <title>Bootstrap template</title>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
       <script src="bootstrap/js/bootstrap.min.js"></script>
-      <link href="css/reseau-metro.css" rel="stylesheet">
-      
-          
-      
-      <link rel="stylesheet" href="css/jquery-ui.css">
-      <link rel="stylesheet" href="css/jquery-ui-2.css" />
-
-      <script src="js/jquery-1.10.2.js"></script>
-      <script src="js/jquery-ui.js"></script>
-      <script src="js/source-data.js"></script>
-
-
+      <link href="css/plan.css" rel="stylesheet">
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+          <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
     </head>
     <body>
     
@@ -28,36 +24,21 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
-           <p><img id="testimage" src="images/logo2.png" class="logoappli" alt="Image flottante" /> Métransilien</p>
+           <p><img src="images/logo2.png" class="logoappli" alt="Image flottante" /> Métransilien</p>
           </a>
-
-          <!--<a href="reseau-metro.html">
-          <button  id="button_return" type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-          </button>
-          </a>-->
+          
 
         </div>
       </div>
     </nav>
 
 
-  <div id="searchBar" class="container">
-    <div class="row">
-        <form class="form-inline">
-          <span class="col-xs-12 col-sm-12 col-md-12 col-ld-12">
-            <input id="autocomplete" autocomplete="on" type="text" class="form-control" placeholder="Rechercher une ligne">
-          </span>
-        </form>
-      
+   <div class="container">
+    <div class="row"> 
+      <a href="planMetro.html"> <div id="bloc-plan" class="col-xs-10 col-sm-10 col-md-10">Plan des Métro</div> </a>
+      <a href="planRer.html"> <div id="bloc-plan" class="col-xs-10 col-sm-10 col-md-10">Plan des RER</div> </a>
     </div>
   </div>
-
-  <div id="image-metro">
-    <img id="image-metro2" src="#" />
-   </div>
-
-  
 
   <!-- Footer -->
   <nav class="navbar navbar-default navbar-fixed-bottom">

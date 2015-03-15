@@ -2,15 +2,15 @@
 function affiche_metro(ligne){
 
   //On cache la barre de recherche
-  var searchBar = document.getElementById('searchBar');
-  searchBar.style.display = "none"; 
+  //var searchBar = document.getElementById('searchBar');
+  //searchBar.style.display = "none"; 
 
   // On récupuère la div du titre et on le modifie
-  var titre = document.getElementById('titre-ligne');
-  titre.firstChild.data = "Ligne "+ligne
+  //var titre = document.getElementById('titre-ligne');
+  //titre.firstChild.data = "Ligne "+ligne
   
   //On affiche le titre
-  titre.style.display = "block";
+  //titre.style.display = "block";
 
   //On récupère le lien de l'image et on le modifie
   var div_image = document.getElementById("image-metro");
@@ -20,55 +20,16 @@ function affiche_metro(ligne){
   image.setAttribute('src', 'images/metro-ligne-'+ligne+'.gif');
 
   //On affiche le bouton précédent
-  var button_return = document.getElementById('button_return');
-  button_return.style.display = "block";
-
+  //var button_return = document.getElementById('button_return');
+  //button_return.style.display = "block";
 }
 
 
-$(function() {
-    var availableTags = [
-      "RER A",
-      "RER B",
-      "RER C",
-      "RER D",
-      "RER E",
-      "Metro 1",
-      "Metro 2",
-      "Metro 3",
-      "Metro 3 bis",
-      "Metro 4",
-      "Metro 5",
-      "Metro 6",
-      "Metro 7",
-      "Metro 7 bis",
-      "Metro 8",
-      "Metro 9",
-      "Metro 10",
-      "Metro 11",
-      "Metro 12",
-      "Metro 13",
-      "Metro 14"
-    ];
-    $( "#autocomplete" ).autocomplete({
-      delay: 100,
+function ligne_metro(ligne){
 
-      source: availableTags,
+  var metro = ligne;
 
-      messages: {
-        noResults: '',
-        results: function() {}
-    },
-
-    select : function(event, ui){
-
-        // prevent autocomplete from updating the textbox
-        event.preventDefault();
-       
-
-        var metro = ui.item.value;
-
-        if ( metro=="Metro 1")
+  if ( metro=="Metro 1")
         {
           affiche_metro(1);        
         }
@@ -125,8 +86,48 @@ $(function() {
         {
          affiche_metro(14); 
         }
+
+}
+
+$(function() {
+    var availableTags = [
+      "Metro 1",
+      "Metro 2",
+      "Metro 3",
+      "Metro 3 bis",
+      "Metro 4",
+      "Metro 5",
+      "Metro 6",
+      "Metro 7",
+      "Metro 7 bis",
+      "Metro 8",
+      "Metro 9",
+      "Metro 10",
+      "Metro 11",
+      "Metro 12",
+      "Metro 13",
+      "Metro 14"
+    ];
+    $( "#autocomplete" ).autocomplete({
+      delay: 100,
+
+      source: availableTags,
+
+      messages: {
+        noResults: '',
+        results: function() {}
+    },
+
+    select : function(event, ui){
+
+        // prevent autocomplete from updating the textbox
+        event.preventDefault();
+       
+
+        var metro = ui.item.value;
+
+        ligne_metro(metro);
         
-        //alert( ui.item.value ); // lance une alerte indiquant la valeur de la proposition
     }
 
     });

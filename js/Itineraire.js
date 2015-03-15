@@ -62,12 +62,15 @@ else
 			$("#tabR").append("<tr id='tab'><td>"+afficherImage(section.mode)+"</td><td>"+"marcher jusqu'&agrave; la station : "+section.to.name+"</td><td id='tdLigne'>"+secondsTominutes(section.duration)+" minutes</td>");
 		case "transfer" :
 			if(section.transfer_type=="walking")
-				$("#tabR").append("<tr id='tab'><td>"+"marchez jusqu'&agrave; la station : "+section.to.name+"</td><td id='tdLigne'>"+secondsTominutes(section.duration)+" minutes</td>");
+			$("#tabR").append("<tr id='tab'><td>"+"marchez jusqu'&agrave; la station : "+section.to.name+"</td><td id='tdLigne'>"+secondsTominutes(section.duration)+" minutes</td>");
 		default:
 		$("#tabR").append("<tr id='tab'><td>Pa marche</td><td id='tdLigne'></td>");
        
 }        
             });
+			
+			$("#tabR").append("<tr id='tab'><td>Pa marche</td><td id='tdLigne'></td>");
+			
 
            },
           error: function(data) {console.log("salut!")}
@@ -96,13 +99,13 @@ else
    
    else if(NomLigne == "walking")
    {
-		return  "<img id='ImageMetro' src='images/marche.png' alt='marchez' width='30' height='40'/>";
+		return  "<img id='ImageMetro' src='images/marche.png' alt='marchez' width='25' height='42'/>";
    }
    
    else if(NomLigne == "waiting")
    {
    
-		"<img id='ImageMetro' src='images/attendre.png' alt='marchez' width='30' height='40'/>"
+		return "<img id='ImageMetro' src='images/wait.png' alt='marchez' width='30' height='36'/>"
    }
    
    }

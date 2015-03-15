@@ -21,6 +21,24 @@
 	<script src="js/jquery.formatDateTime.min.js"></script>
 	<script src="js/Itineraire.js"></script>
   
+  
+  <STYLE type="text/css">
+  
+  #resultafter{
+  float:right;
+  padding: 15px;
+  }
+  
+   #resultbefore{
+  float:left;
+  padding: 15px;
+  }
+  
+  
+  
+  </STYLE>
+  
+  
     </head>
 	
 	
@@ -118,16 +136,32 @@
     </div>
 </div>
 
+
 <div id='result' style='display:none'>
+
 <h1>Itinéraire</h1>
+<div>
 <table id="headerResult"></table>
  <table id="tabR" style="width:100%" border="1"></table>
+</div>
 
 
+<div id="hiddenlink">
+<input type="hidden" id="hiddenNext" value=""/>
+<input type="hidden" id="hiddenBefore" value=""/>
+</div>
+
+<div class="col-xs-5 col-sm-4 col-md-4" id="resultafter">
+		<button id="partir" type="button" class="btn btn-primary">Partir Plus Tard</button>
+</div>
+
+<div  class="col-xs-5 col-sm-4 col-md-4" id="resultbefore">
+		<button id="partir" type="button" class="btn btn-primary">Arriver Plus Tôt</button>
+</div>
 </div>
 
   <!-- Footer -->
-  <nav class="navbar navbar-default navbar-fixed-bottom">
+ <!-- <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
       <div class="row">
         <div id="bloc-accueil-footer" class="col-xs-3">
@@ -152,7 +186,7 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav>-->
   </body>
 </html>
 

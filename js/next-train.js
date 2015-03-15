@@ -66,7 +66,7 @@ function nav(IdStation){
           success: function(data) {
             // data is an array of objects and must be transformed for autocomplete to use
             console.log(data);
-
+                 $("#tabR").empty();
           //  var NomTrain =data.departures[0].route.direction.stop_point.name;
           //  var NomLigne =data.departures[0].route.line.code;
           //  var ListeStation=data.departures[0].route.line.name;
@@ -79,10 +79,12 @@ function nav(IdStation){
 
             if (NomLigne=='A' || NomLigne=='B'|| NomLigne=='C' || NomLigne=='D' || NomLigne=='E' || NomLigne=='H'|| NomLigne=='J' || NomLigne=='K' || NomLigne=='L' || NomLigne=='N'|| NomLigne=='P' || NomLigne=='R' || NomLigne=='U') {
                 
+             
                  $("#tabR").append("<tr id='tab'><td id='tdHeure'>"+heure+"</td><td id='tdLigne'><img id='ImageRER' src='images/"+dep.route.line.code+".svg' alt='"+dep.route.line.code+"'/></td><td id='tdNom'>"+dep.route.direction.stop_point.name+"</td><td id='tdListe'>"+dep.route.line.name+"</td></tr>");
                        
 
             } else {
+
                    $("#tabR").append("<tr id='tab'><td id='tdHeure'>"+heure+"</td><td id='tdLigne'>"+dep.route.line.code+"</td><td id='tdNom'>"+dep.route.direction.stop_point.name+"</td><td id='tdListe'>"+dep.route.line.name+"</td></tr>");
                        
             }

@@ -6585,11 +6585,6 @@
     "Longitude":2.367697
   },
   {
-    "Nom":"Saint-Fargeau",
-    "Latitude":48.8717,
-    "Longitude":2.404299
-  },
-  {
     "Nom":"SAINT-FRANCOIS XAVIER",
     "Latitude":48.852187,
     "Longitude":2.313285
@@ -8465,21 +8460,6 @@
     "Longitude":3.219757
   },
   {
-    "Nom":"Sainte-Colombe Septveilles",
-    "Latitude":48.529149,
-    "Longitude":3.255368
-  },
-  {
-    "Nom":"Saint-Fargeau",
-    "Latitude":48.564571,
-    "Longitude":2.542754
-  },
-  {
-    "Nom":"Saint-Fargeau-Ponthierry - Pringy",
-    "Latitude":48.534971,
-    "Longitude":2.544397
-  },
-  {
     "Nom":"Couilly-Pont-aux-Dames - Saint-Germain-sur-Morin - Quincy-Voisin",
     "Latitude":48.883291,
     "Longitude":2.853867
@@ -10343,16 +10323,6 @@
     "Nom":"VIEILLE REMISE",
     "Latitude":48.718347,
     "Longitude":2.310685
-  },
-  {
-    "Nom":"Corbeil-Essonnes",
-    "Latitude":48.613819,
-    "Longitude":2.472938
-  },
-  {
-    "Nom":"Corbeil-Essonnes Robinson",
-    "Latitude":48.605556,
-    "Longitude":2.462456
   },
   {
     "Nom":"Le Plessis Chenet",
@@ -70030,36 +70000,6 @@
     "Longitude":2.367697
   },
   {
-    "Nom":"SAINT-FARGEAU",
-    "Latitude":48.872257,
-    "Longitude":2.404517
-  },
-  {
-    "Nom":"SAINT-FARGEAU",
-    "Latitude":48.871376,
-    "Longitude":2.404176
-  },
-  {
-    "Nom":"SAINT-FARGEAU",
-    "Latitude":48.872257,
-    "Longitude":2.404517
-  },
-  {
-    "Nom":"Saint-Fargeau",
-    "Latitude":48.8717,
-    "Longitude":2.404299
-  },
-  {
-    "Nom":"SAINT-FARGEAU",
-    "Latitude":48.872113,
-    "Longitude":2.404613
-  },
-  {
-    "Nom":"Saint-Fargeau",
-    "Latitude":48.8717,
-    "Longitude":2.404299
-  },
-  {
     "Nom":"SAINT-FRANCOIS XAVIER",
     "Latitude":48.852187,
     "Longitude":2.313285
@@ -76873,16 +76813,6 @@
     "Nom":"Sainte-Colombe Septveilles",
     "Latitude":48.529149,
     "Longitude":3.255368
-  },
-  {
-    "Nom":"Saint-Fargeau",
-    "Latitude":48.564486,
-    "Longitude":2.542652
-  },
-  {
-    "Nom":"Saint-Fargeau-Ponthierry - Pringy",
-    "Latitude":48.53514,
-    "Longitude":2.544349
   },
   {
     "Nom":"Couilly-Pont-aux-Dames - Saint-Germain-sur-Morin - Quincy-Voisin",
@@ -86440,7 +86370,7 @@
     "Longitude":2.414359
   },
   {
-    "Nom":"Villabé",
+    "Nom":"VILLABE",
     "Latitude":48.592628,
     "Longitude":2.461806
   },

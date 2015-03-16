@@ -43,21 +43,6 @@ body {
 
 
 
-.navbar {
-
-  min-height: 0px;
-  margin-bottom: 0px;
-  border-radius: 0px;
-
-  background: #91BD09;
-  background: -webkit-linear-gradient( #91BD09, #4E9939); 
-  background: -moz-linear-gradient( #91BD09, #4E9939); 
-  background: -ms-linear-gradient( #91BD09, #4E9939); 
-  background: -o-linear-gradient( #91BD09, #4E9939); 
-  background: linear-gradient( #91BD09, #4E9939);
-
-}
-
 
 
 
@@ -83,7 +68,9 @@ display: none;
 
 }
 
-h3 { 
+
+p { 
+
 text-align:center;
 
 }

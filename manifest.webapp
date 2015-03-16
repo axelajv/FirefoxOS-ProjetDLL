@@ -1,6 +1,6 @@
 {
-  "name": "FirefoxOS-ProjetDLL",
-  "description": "Métransilien",
+  "name": "Transimétro",
+  "description": "Transimétro",
   "launch_path": "/index.html",
   "icons": {
     "16": "/images/logo.png",

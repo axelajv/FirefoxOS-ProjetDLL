@@ -161,7 +161,7 @@ var Personne = L.icon({
 
 
 			
-				$('#titre').append('<h3> '+ Nom +' </h3>');
+				$('#titre').append('<a class="navbar-brand" href="index.html"><p><img src="images/logo2.png" class="logoappli" /> '+ Nom +' </p></a>');
 				 	
 			  });
 			  

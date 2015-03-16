@@ -49,39 +49,39 @@ function ligne_transilien(ligne){
       {
         affiche_transilien("E");   
       }
-  else if ( transilien=="Ligne H" )
+  else if ( transilien=="Ligne H" || transilien=="Réseau Paris Nord"  )
       {
         affiche_transilien("H");   
       }
-  else if ( transilien=="Ligne K" )
+  else if ( transilien=="Ligne K" || transilien=="Réseau Paris Nord" )
       {
         affiche_transilien("K");   
       }
-  else if ( transilien=="Ligne J" )
+  else if ( transilien=="Ligne J" || transilien=="Réseau Paris Saint-Lazare" )
       {
         affiche_transilien("J");   
       }
-  else if ( transilien=="Ligne L" )
+  else if ( transilien=="Ligne L" || transilien=="Réseau Paris Saint-Lazare" )
       {
         affiche_transilien("L");   
       }
-  else if ( transilien=="Ligne P" )
+  else if ( transilien=="Ligne P" || transilien=="Réseau Paris Est" )
       {
         affiche_transilien("P");   
       }
-  else if ( transilien=="Ligne T4" )
+  else if ( transilien=="Ligne T4" || transilien=="Réseau Paris Est" )
       {
         affiche_transilien("T4");   
       }
-  else if ( transilien=="Ligne N" )
+  else if ( transilien=="Ligne N" || transilien=="Réseau Paris Montparnasse" )
       {
         affiche_transilien("N");   
       }
-  else if ( transilien=="Ligne R" )
+  else if ( transilien=="Ligne R" || transilien=="Réseau Paris Lyon")
       {
         affiche_transilien("R");   
       }
-  else if ( transilien=="Ligne U" )
+  else if ( transilien=="Ligne U" || transilien=="Réseau La Défense - La Verrière")
       {
         affiche_transilien("U");   
       }
@@ -102,9 +102,9 @@ $(function() {
       "Réseau Paris Nord",
       "Réseau Paris Saint-Lazare",
       "Réseau Paris Est",
+      "Réseau Paris Montparnasse",
       "Réseau Paris Lyon",
       "Réseau La Défense - La Verrière"
-
     ];
     $( "#autocomplete" ).autocomplete({
       delay: 100,

@@ -26,10 +26,15 @@ function affiche_metro(ligne){
 
 function hide_footer(){
 
-  var footer = document.getElementById("bloc-accueil-footer");
-  element_rechercheBox.style.display = "none";
+  var footer = document.getElementById("footer");
+  footer.style.display = "none";
 }
 
+function show_footer(){
+  var footer = document.getElementById("footer");
+  footer.style.display = "block";
+
+}
 
 function ligne_metro(ligne){
 

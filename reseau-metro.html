@@ -20,7 +20,7 @@
 
 
     </head>
-    <body>
+    <body >
     
 
     
@@ -46,7 +46,7 @@
     <div class="row">
         <form class="form-inline">
           <span class="col-xs-12 col-sm-12 col-md-12 col-ld-12">
-            <input id="autocomplete" autocomplete="on" type="text" class="form-control" placeholder="Rechercher une ligne" onclick="hide_footer();">
+            <input id="autocomplete" autocomplete="on" type="text" class="form-control" placeholder="Rechercher une ligne" onfocus="hide_footer()" onblur="show_footer()">
           </span>
         </form>
       
@@ -60,7 +60,7 @@
   
 
   <!-- Footer -->
-  <nav class="navbar navbar-default navbar-fixed-bottom">
+  <nav id="footer" class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
       <div class="row">
         <div id="bloc-accueil-footer" class="col-xs-3">

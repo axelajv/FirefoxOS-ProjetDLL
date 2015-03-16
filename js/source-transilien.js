@@ -98,7 +98,13 @@ $(function() {
       "Ligne T4",
       "Ligne N",
       "Ligne R",
-      "Ligne U"
+      "Ligne U",
+      "Réseau Paris Nord",
+      "Réseau Paris Saint-Lazare",
+      "Réseau Paris Est",
+      "Réseau Paris Lyon",
+      "Réseau La Défense - La Verrière"
+
     ];
     $( "#autocomplete" ).autocomplete({
       delay: 100,

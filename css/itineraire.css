@@ -1,0 +1,35 @@
+.buttonResult
+{
+   padding-top: 15px;
+ }
+  
+#tabR #wait
+ {
+ background-color: #E0E0E0 ;
+text-align:center; 
+ }
+ 
+#tabR #Imagewait
+{
+padding : 5px;
+}
+
+.row
+{
+padding-top: 25px;
+}
+
+#type{
+//padding-top: 15px;
+}
+
+#date{
+
+//padding-top: 15px;
+
+}
+
+#partir 
+{
+//padding-top : 15 px;
+}

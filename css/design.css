@@ -200,15 +200,8 @@ html, body{
 
 body > .container
 {
-	padding-top: 40px;
+	padding-top: 20px;
 }
-
-
-
-
-
-
-
 
 #bloc-plan {
 
@@ -240,17 +233,16 @@ body > .container
 
 }
 
-#recherche-ligne {
-
+#autocomplete {
   margin-left: 10px;
   text-align: center;
-
 }
 
 
 #titre-ligne
 {
   text-align: center;
+  display: none;
 }
 
 #image-metro{
@@ -258,9 +250,14 @@ border: thin solid black;
 height: 50%; 
 width: 100%;
 overflow: scroll;
+display: none;
 }
 
 #image-metro img{
 height: 100%;
 }
 
+#button_return{
+  display: block;
+  margin-left: 270px;
+}

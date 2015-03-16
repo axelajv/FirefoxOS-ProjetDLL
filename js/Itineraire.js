@@ -1,39 +1,49 @@
 ﻿
  var arrivee;
  var depart;
-
-function  Itineraire(depart,arrivee, date, type) {
-if(type!='')
+// Calcul de l'itinéraire
+function  Itineraire(depart,arrivee, date, type, url) {
+if(type!='' && url=='')
 {
-	var $url = 'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:'+depart+'&to=stop_area:'+arrivee+'&datetime='+date+'&max_duration_to_pt=3000&datetime_represents='+type;
-	console.log($url);
+	var $MyUrl = 'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:'+depart+'&to=stop_area:'+arrivee+'&datetime='+date+'&max_duration_to_pt=3000&datetime_represents='+type;
+	//console.log($url);
 }
 
-else
+else if(type=='' && url=='')
 {
-	var $url = 'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:TRN:SA:DUA8768100&to=stop_area:TRN:SA:DUA8754552&datetime='+date+'&max_duration_to_pt=3000';
+	var $MyUrl = 'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:TRN:SA:DUA8768100&to=stop_area:TRN:SA:DUA8754552&datetime='+date+'&max_duration_to_pt=3000';
 	//'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:'+depart+'&to=stop_area:'+arrivee+'&datetime='+date+'&max_duration_to_pt=3000';
 	//
-	console.log($url);
+	console.log($MyUrl);
 }
+
+else if(url !='')
+	$MyUrl = url;
 
 
  $.ajax({
       beforeSend: function(request) {
         request.setRequestHeader("Authorization", '0da1aeae-b764-4b74-85fc-be27c8546a69' );
           },
-       url : $url,
+       url : $MyUrl,
        type : 'GET',
        dataType : 'json',
        success : function(data){ 
+	   
 		$('#result').css('display','block');
 		$('#form').css('display','none');
+		
+		//on vide les champs départ et arrivee
+		$('#depart').val("");
+		$('#arrivee').val("");
+		
 		console.log(data);	
 		console.log(data.journeys[0].duration);
 		
+		// Resultat
+		if(data.journeys.length>0) {
 		
-		
-		$("#headerResult").append("<tr id='tab'><td>"+"d&eacute;part le : "+convertDate(data.journeys[0].departure_date_time)+" </td><td>"+"   arrivé le : "+ data.journeys[0].arrival_date_time+"</td> </tr>");
+		$("#headerResult").append("<tr id='tab'><td>"+"d&eacute;part le : "+convertDate(data.journeys[0].departure_date_time)+"&nbsp;&nbsp; </td><td>"+" &nbsp;  arrivé le : "+convertDate(data.journeys[0].arrival_date_time)+"</td> </tr>");
 		$("#headerResult").append("<tr id='tab'><td>"+"dur&eacute;e du trajet : "+"</td><td id='tdLigne'>"+secondsTominutes(data.journeys[0].duration)+" minutes</td></tr>");
 		
 		$.each(data.journeys[0].sections, function(i, section) {
@@ -49,11 +59,17 @@ else
 			$("#tabR").append("<tr id='tab'><td>"+"marcher jusqu'&agrave; la station"+"</td><td id='tdLigne'>"+section.to.name+"</td>");
 			break;
 		case "public_transport":
+				if(section.display_informations.commercial_mode=='Bus')
+				{
+					$("#tabR").append("<tr><td rowspan='3'>"+afficherImage(section.display_informations.commercial_mode)+" "+ section.display_informations.code +"</td><td>Montez à : "+section.from.name+"</td><td rowspan='3'>"+secondsTominutes(section.duration)+" min </td><tr><td> Direction : "+section.display_informations.direction+"</td></tr><tr><td> Descendez &agrave;  : "+section.to.name+"</td></tr>");
+				}
+				else
 				$("#tabR").append("<tr><td rowspan='3'>"+afficherImage(section.display_informations.code)+"</td><td>Montez à : "+section.from.name+"</td><td rowspan='3'>"+secondsTominutes(section.duration)+" min </td><tr><td> Direction : "+section.display_informations.direction+"</td></tr><tr><td> Descendez &agrave;  : "+section.to.name+"</td></tr>");
 				break;
+				
 		case "waiting" :
 		
-			$("#tabR").append("<tr id='wait'><td colspan='3'>"+afficherImage(section.type)+"attendez : "+secondsTominutes(section.duration)+" minutes</td>");
+			$("#tabR").append("<tr id='wait'><td colspan='3'>"+afficherImage(section.type)+" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+secondsTominutes(section.duration)+" minute(s)</td>");
 			
 		break;
 		
@@ -62,15 +78,18 @@ else
 			$("#tabR").append("<tr id='tab'><td>"+afficherImage(section.mode)+"</td><td>"+"marcher jusqu'&agrave; la station : "+section.to.name+"</td><td id='tdLigne'>"+secondsTominutes(section.duration)+" minutes</td>");
 		case "transfer" :
 			if(section.transfer_type=="walking")
-			$("#tabR").append("<tr id='tab'><td>"+"marchez jusqu'&agrave; la station : "+section.to.name+"</td><td id='tdLigne'>"+secondsTominutes(section.duration)+" minutes</td>");
-		default:
-		$("#tabR").append("<tr id='tab'><td>Pa marche</td><td id='tdLigne'></td>");
+			$("#tabR").append("<tr id='tab'><td td colspan='3'>"+"changement de ligne  :  "+secondsTominutes(section.duration)+" minutes</td>");
+		
        
 }        
             });
 			
-			$("#tabR").append("<tr id='tab'><td>Pa marche</td><td id='tdLigne'></td>");
+			$("#hiddenNext").val( data.links[0].href);
+			$("#hiddenPrevious").val(data.links[1].href);
 			
+			}
+			else
+			$("#tabR").append("<p> Une erreur est survenue  : " /*+data.errors[]*/+"</p>");
 
            },
           error: function(data) {console.log("salut!")}
@@ -79,7 +98,7 @@ else
         //result(data);
        }
    
-
+// gestion des images pour l'affichage des résultats
    function afficherImage(NomLigne) {
    
    console.log(NomLigne);
@@ -105,7 +124,12 @@ else
    else if(NomLigne == "waiting")
    {
    
-		return "<img id='ImageMetro' src='images/wait.png' alt='marchez' width='30' height='36'/>"
+		return "<img id='Imagewait' src='images/wait.png' alt='marchez' width='25' height='30'/>"
+   }
+   
+   else if(NomLigne=='Bus')
+   {
+		return "<img id='Imagewait' src='images/bus.png' alt='marchez' width='30' height='30'/>"
    }
    
    }
@@ -127,7 +151,46 @@ $(document).ready(function(){
 $( "#go" ).on('click',go);
 $( "#partir" ).on('click',goafter);
 $( "#next" ).on('click',selectDate);
+$( "#resultNext" ).on('click',resultNext);
+$( "#resultPrevious" ).on('click',resultPrevious);
+
+var dateMin = new Date();
+dateMin.setDate(dateMin.getDate() -1);
+var dateMax = new Date();
+dateMax.setDate(dateMax.getMonth() +1);
+dateMin = $.formatDateTime('dd-mm-yy hh:ii', dateMin);
+dateMax = $.formatDateTime('dd-mm-yy hh:ii', dateMax);
+
+$("#dtBox").DateTimePicker({
+		//minDateTime: dateMin,
+		//maxDateTime: dateMax,
+		formatHumanDate: function(date)
+					{
+						return date.dayShort + ", " + date.dd + " " + date.month+ ", " + date.yyyy;
+					}
+				
 });
+
+});
+
+
+
+function resultNext() 
+{
+	$('#headerResult').empty();
+	$('#tabR').empty();
+	url = $("#hiddenNext").val();
+	Itineraire('','','','',url);;
+}
+
+function resultPrevious() 
+{
+	$('#headerResult').empty();
+	$('#tabR').empty();
+	url = $("#hiddenPrevious").val();
+	Itineraire('','','','',url);
+}
+
 
 function  go() {
 
@@ -145,11 +208,11 @@ function  go() {
 	date= date.replace(".", "");
 	date = date.substring(0, 13)*/
 	/*console.log(date);*/
-	Itineraire(depart,arrivee,date,'');
+	Itineraire(depart,arrivee,date,'','');
 	/*}
 	
 	else
-		alert('veuillez renseigner correctement la station de d�part et d\'arriv�e');*/
+		alert('veuillez renseigner correctement la station de départ et d\'arrivée');*/
 	
 	
 }
@@ -215,11 +278,21 @@ function setDepart(val,text)
 	
 	return dd+"/"+mm+"/"+yyyy+" "+h+":"+min;
 	
-	
-	
 } 
 
-
+ function convertDatetoUTC(d)
+{
+	//var date = new Date(d);
+	var dd = d.substring(0, 2);
+	var mm = d.substring(3, 5);
+	var yyyy = d.substring(6, 10);
+	var h = d.substring(11, 13);
+	var min = d.substring(14, 16);
+	
+	
+	return yyyy+""+mm+""+dd+"T"+h+""+min;
+	
+} 
 
 
 
@@ -231,17 +304,19 @@ function result(data) {
 
 function  goafter() {
 
-	var depart = $('#depart').val();
-	var arrivee = $('#arrivee').val();
-	var dateTime = $('#dateTime').val()
-	console.log(dateTime);
+	//var depart = $('#depart').val();
+	//var arrivee = $('#arrivee').val();
+	var dateTime = $('#dateTime').val();
 	var type = $('#type input:radio:checked').val();
-	console.log(type);
-	var date = $.formatDateTime('yyddmmThhii', new Date(dateTime));
+	
+	//var date = $.formatDateTime('yyddmmThhii', new Date(dateTime));
+	//console.log($.formatDateTime('yyddmmThhii', new Date(dateTime)));
 	if(dateTime !='')
 	{
+		dateTime = convertDatetoUTC(dateTime);
 		console.log(dateTime);
-		Itineraire(depart,arrivee,date,type);
+		console.log(dateTime);
+		Itineraire(depart,arrivee,dateTime,type,'','');
 	}
 	
 	else
@@ -275,14 +350,14 @@ function secondsTominutes(secs)
 
 
 
-$(function () {
+/*$(function () {
 $('#datetimepicker1').datetimepicker({
 locale: 'fr',
 sideBySide: true,
-//collapse:false,
+collapse:false,
 
 });
-});
+});*/
 	
 	
 

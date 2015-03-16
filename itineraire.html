@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
+<head>
     <title>Itinéraire</title>
-      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,47 +9,30 @@
     <script src="js/jquery-1.11.2.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
     <link href="css/design.css" rel="stylesheet">
-	<script src="bootstrap/js/moment-with-locales.min.js"></script>
-	<link href="bootstrap/css/bootstrap-datetimepicker.css" rel="stylesheet">
-	<link href="bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-    <script src="bootstrap/js/mockjax.js" type="text/javascript"></script>
+	<link href="css/itineraire.css" rel="stylesheet">
+	<script src="bootstrap/js/mockjax.js" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap-typeahead.js" type="text/javascript"></script>
-	<script src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="js/jquery.formatDateTime.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/DateTimePicker.css" />
+	<link rel="stylesheet" type="text/css" href="js/jquery.mobile.min.css" />
+	<script type="text/javascript" src="js/jquery.mobile.min.js"></script>
+	<script type="text/javascript" src="js/DateTimePicker.js"></script>
 	<script src="js/Itineraire.js"></script>
   
   
-  <STYLE type="text/css">
-  
-  #resultafter{
-  float:right;
-  padding: 15px;
-  }
-  
-   #resultbefore{
-  float:left;
-  padding: 15px;
-  }
-  
-  
-  
-  </STYLE>
-  
-  
-    </head>
+</head>
 	
 	
-    <body>
+<body>
     
 
-    
-    <nav class="navbar navbar-default">
+   <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <div class="navbar-header">
+        
           <a class="navbar-brand" href="index.html">
-          <!-- <p><img src="images/logo.png" class="logoappli" alt="Image flottante" /> SNCF Transilien</p>-->
+           <p><img src="images/logo2.png" class="logoappli" alt="Image flottante" /> TransiMetro</p>
           </a>
-        </div>
+
       </div>
     </nav>
 
@@ -62,46 +42,40 @@
    <div class="container">
    
     <div class="row">
-      <div id="bloc-accueil-body" class="col-xs-8 col-sm-8 col-md-8"><div class="input-group">
-		<span class="input-group-addon" id="basic-addon1">Départ : </span>
-		<input id="depart" type="text" class="form-control" placeholder="Stations" aria-describedby="basic-addon1" data-provide="typeahead">
+      <div  class="col-xs-12 col-sm-8 col-md-8"><div class="input-group">
+		<span class="input-group-addon">Départ : </span>
+		<input id="depart" type="text" class="form-control" placeholder="Stations" data-provide="typeahead">
 		</div></div> 
       
     </div>
 	
 	
     <div class="row">
-     <br> <div id="bloc-accueil-body" class="col-xs-8 col-sm-8 col-md-8"><div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">Arrivée : </span>
-  <input id="arrivee" type="text" class="form-control" placeholder="Stations" aria-describedby="basic-addon1" autocomplete="off">
+     <br> <div  class="col-xs-12 col-sm-8 col-md-8"><div class="input-group">
+  <span class="input-group-addon" >Arrivée : </span>
+		<input id="arrivee" type="text" class="form-control" placeholder="Stations" autocomplete="off">
 </div>
 </div> 
  </div>
  
  
- <br />
 
- <div class="row">
-     <br>
-	 
-	</div> 
- </div>
- <br>
   <div class="row">
 	
-		<div class="input-group" class="col-xs-8 col-sm-8 col-md-8">
-			<button id="go" type="button" class="btn btn-primary">Partir maintenant</button>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-xs-offset-1 buttonResult">
+			<button id="go" type="button" class="btn btn-primary">Partir maintenant </button>
+			</div>
+			<div class="col-xs-4 col-sm-4 col-md-4 col-xs-offset-3 buttonResult input-group">
 			<button id="next" type="button" class="btn btn-primary">Partir plus tard</button>
 		</div>
 		
 </div>
 	
 
-
  <br />
  <div id="plustard" style="display:none;">
  
-    <div class="btn-group" id="type" data-toggle="buttons">
+    <div class="btn-group col-xs-6 col-sm-6 col-md-8" id="type" data-toggle="buttons">
         <label class="btn btn-primary active">
             <input type="radio" name="options" id="option1" checked="" value="departure "> Partir à
         </label>
@@ -110,58 +84,63 @@
         </label>
     </div>
 	<br><br>
-        <div class="col-xs-4 col-sm-3 col-md-2">
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" id="dateTime" />
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
+        <div class="col-xs-8 col-sm-3 col-md-2">
+            <div class="input-group" id="date">
+        			<span class="input-group-addon">Date : </span><input id="dateTime" class="form-control" placeholder="Choissisez une date" type="text" data-field="datetime" readonly>
+				 <div id="dtBox"></div>
             </div>
         </div>
 
      <br> <br>
-	<div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2">
-	 <div id="bloc-accueil-body" class="col-xs-4 col-sm-3 col-md-2">
+	
+	 <div class="col-xs-4 col-sm-3 col-md-2">
 		<div class="input-group">
 		<button id="partir" type="button" class="btn btn-primary">Partir</button>
 		</div>
 	</div> 
- </div>       
+    
 	   
 	   
 </div>
 	
 	</div>
-    </div>
-</div>
 
+</div>
 
 <div id='result' style='display:none'>
 
 <h1>Itinéraire</h1>
 <div>
 <table id="headerResult"></table>
+<br>
  <table id="tabR" style="width:100%" border="1"></table>
+ 
+ <div id="error"></div>
 </div>
 
 
 <div id="hiddenlink">
 <input type="hidden" id="hiddenNext" value=""/>
-<input type="hidden" id="hiddenBefore" value=""/>
+<input type="hidden" id="hiddenPrevious" value=""/>
 </div>
 
-<div class="col-xs-5 col-sm-4 col-md-4" id="resultafter">
-		<button id="partir" type="button" class="btn btn-primary">Partir Plus Tard</button>
+<div class="container">
+      <div class="row">
+		<div class="col-xs-4 col-sm-4 col-md-4 buttonResult"  >
+				<button id="resultNext" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Arriver Plus Tôt </button>
+		</div>
+
+		<div  class="col-xs-4 col-sm-4 col-md-4 col-xs-offset-2 buttonResult" >
+			<button id="resultPrevious" type="button" class="btn btn-primary">Partir Plus Tard <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+		</div>
+	</div>
 </div>
 
-<div  class="col-xs-5 col-sm-4 col-md-4" id="resultbefore">
-		<button id="partir" type="button" class="btn btn-primary">Arriver Plus Tôt</button>
-</div>
 </div>
 
-  <!-- Footer -->
- <!-- <nav class="navbar navbar-default navbar-fixed-bottom">
+
+<!-- Footer -->
+ <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
       <div class="row">
         <div id="bloc-accueil-footer" class="col-xs-3">
@@ -186,7 +165,7 @@
         </div>
       </div>
     </div>
-  </nav>-->
+ </nav> 
   </body>
 </html>
 

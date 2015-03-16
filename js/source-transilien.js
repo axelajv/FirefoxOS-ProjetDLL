@@ -1,3 +1,12 @@
+$(document).ready(function(){
+          $("input").click(function(){
+              $("#footer").css("display", "none").fadeOut(2000);
+          });
+          $("input").blur(function(){
+              $("#footer").css("display", "block");
+          });
+      });
+
 // Affiche le plan du métro en fonction de la ligne renseigné
 function affiche_transilien(ligne){
 

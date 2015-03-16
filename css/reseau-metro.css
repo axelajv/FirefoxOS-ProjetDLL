@@ -282,3 +282,12 @@ height: 100%;
   
 
 }
+
+.footerIcon {
+
+  height: 3.5em;
+  padding: 0.6em;
+   display: block;
+    margin-left: auto;
+    margin-right: auto ;
+}

@@ -1,3 +1,14 @@
+$(document).ready(function(){
+          $("input").click(function(){
+              $("#footer").css("display", "none").fadeOut(2000);
+          });
+          $("input").blur(function(){
+              $("#footer").css("display", "block");
+          });
+      });
+
+
+
 // Affiche le plan du métro en fonction de la ligne renseigné
 function affiche_metro(ligne){
 
@@ -35,6 +46,10 @@ function show_footer(){
   footer.style.display = "block";
 
 }
+
+
+
+
 
 function ligne_metro(ligne){
 

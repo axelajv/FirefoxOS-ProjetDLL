@@ -2,6 +2,29 @@
 {
    padding-left: 7%;
  }
+ 
+ 
+ .buttonResult1
+{
+padding-bottom: 50px;
+padding-left: 3%;
+ }
+ 
+ 
+ .btn .btn-primary
+ {
+ padding:15px;
+ }
+ 
+ #type
+{
+	padding-bottom:0%;
+}
+
+#date
+{	
+ padding-bottom : 0%;
+}
   
 #tabR #wait
  {
@@ -32,9 +55,22 @@ padding-top: 25px;
 #partir 
 {
 //padding-top : 15 px;
+width:250%;
+padding-bottom: 3%;
+
 }
 
 #result{
 
 padding-bottom:300px;
 }
+
+#plustard {
+
+margin-top:-45px;
+}
+
+
+.footerIcon {
+
+height: 3.5em; padding: 0.6em; display: block; margin-left: auto; margin-right: auto ; }

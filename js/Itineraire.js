@@ -330,7 +330,7 @@ var depart = $('#depart').val();
 	var arrivee = $('#arrivee').val();
 	if(depart !='' || arrivee != '')
 	{
-		$('.row').css('display','none');
+		$('#firstpart').css('display','none');
 		$('#plustard').css('display','block');
 	}
 	

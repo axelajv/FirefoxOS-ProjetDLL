@@ -24,6 +24,12 @@ function affiche_metro(ligne){
   //button_return.style.display = "block";
 }
 
+function hide_footer(){
+
+  var footer = document.getElementById("bloc-accueil-footer");
+  element_rechercheBox.style.display = "none";
+}
+
 
 function ligne_metro(ligne){
 
@@ -94,12 +100,10 @@ $(function() {
       "Metro 1",
       "Metro 2",
       "Metro 3",
-      "Metro 3 bis",
       "Metro 4",
       "Metro 5",
       "Metro 6",
       "Metro 7",
-      "Metro 7 bis",
       "Metro 8",
       "Metro 9",
       "Metro 10",

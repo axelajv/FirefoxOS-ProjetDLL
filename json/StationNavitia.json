@@ -1544,10 +1544,6 @@
     "label":"GARE DE L'EST"
   },
   {
-    "id":"RTP:SA:1166832",
-    "label":"GARE DE LYON"
-  },
-  {
     "id":"RTP:SA:3764604",
     "label":"GARE DU NORD"
   },
@@ -3574,10 +3570,6 @@
   {
     "id":"RTP:SA:1698",
     "label":"REUILLY-DIDEROT"
-  },
-  {
-    "id":"RTP:SA:3687075",
-    "label":"RICHARD LENOIR"
   },
   {
     "id":"RTP:SA:1700",
@@ -19592,16 +19584,8 @@
     "label":"GARE DE LYON - DIDEROT"
   },
   {
-    "id":"RTP:SP:4037536",
-    "label":"GARE DE LYON - DIDEROT"
-  },
-  {
     "id":"RTP:SP:4471883",
     "label":"GARE DE LYON - VAN GOGH"
-  },
-  {
-    "id":"RTP:SP:4471731",
-    "label":"GARE DE LYON-VAN GOGH"
   },
   {
     "id":"RTP:SP:3765257",
@@ -20518,10 +20502,6 @@
   {
     "id":"RTP:SP:3732210",
     "label":"CIMETIERE DE SAVIGNY-SUR-ORGE"
-  },
-  {
-    "id":"RTP:SP:4439602",
-    "label":"JUVISY-RER"
   },
   {
     "id":"RTP:SP:4377219",

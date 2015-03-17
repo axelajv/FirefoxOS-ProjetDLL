@@ -10,7 +10,7 @@
  margin-bottom: 2%;
   }
  
-.btn-primary
+/*.btn-primary
 {
 background: #F28F22;
 background: -webkit-linear-gradient( #FF6A4F, #D33B11); 
@@ -19,14 +19,14 @@ background: -ms-linear-gradient( #FF6A4F, #D33B11);
 background: -o-linear-gradient( #FF6A4F, #D33B11); 
 background: linear-gradient( #F28F22, #BD5D19);
 background : #E501BF;
-}
+}*/
 
 #footer{
 
 margin-top:-25px;
 
 }
-.btn-primary:hover
+/*.btn-primary:hover
 {
 background: #E256A0;
 }
@@ -39,17 +39,17 @@ background: #E256A0;
 .btn-primary:visited 
 {
 background: #E256A0;
-}
+}*/
 
  #from
  {
- margin-left : 2%;
+margin-left : 1%;
 margin-right : 1%;
  }
  
  #to
  {
- margin-left : 2%;
+ margin-left : 1%;
 margin-right : 1%;
 }
 
@@ -61,7 +61,7 @@ margin-right : 1%;
 
 .buttonResult
 {
-   padding-left: 9%;
+   padding-left: 5%;
   // margin-right : 7%;
  }
  
@@ -80,7 +80,7 @@ padding-left: 3%;
  
  #type
 {
-	padding-bottom:0%;
+padding-bottom:0%;
 }
 
 #date
@@ -90,11 +90,14 @@ padding-left: 3%;
 
 #tabR {
 
-margin-left : 2%;
+margin-left : 1%;
 margin-right : 1%;
 
 }
- 
+#Bnext{
+margin-left:35px;
+}
+
 #tabR #wait
  {
  background-color: #E0E0E0 ;
@@ -132,9 +135,37 @@ top: 6%;
 
 #partir 
 {
-//padding-top : 15 px;
-width:250%;
-padding-bottom: 3%;
+
+
+}
+
+
+#PMillieu{
+
+display:block;
+margin-left:auto;
+margin-right:auto;
+margin:10px;
+
+}
+
+.Pbas{
+
+display:block;
+margin-left:auto;
+margin-right:auto;
+margin-bottom:10px;
+
+}
+
+.PHaut{
+
+display:block;
+margin-left:auto;
+margin-right:auto;
+margin:10px;
+width:100%
+
 
 }
 
@@ -153,6 +184,19 @@ padding-bottom:40%;
 margin-top:-45px;
 }
 
+#plustard{
+
+margin-left:auto;
+margin-right:auto;
+
+}
+
+#plustard .row{
+
+margin-left:auto;
+margin-right:auto;
+
+}
 
 .footerIcon {
 

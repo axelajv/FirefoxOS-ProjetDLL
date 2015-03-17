@@ -90,7 +90,7 @@ else if(url !='')
 			$("#tabR").append("<tr id='tab3'><td>"+afficherImage(section.mode)+"</td><td>"+"<b>marcher jusqu'&agrave; la station :</b>"+section.to.name+"</td><td id='tdLigne'>"+secondsTominutes(section.duration)+" min</td>");
 		case "transfer" :
 			if(section.transfer_type=="walking")
-			$("#tabR").append("<tr><td colspan='3'>"+afficherImage(section.type)+" changement de ligne  :  "+secondsTominutes(section.duration)+" min</td>");
+			$("#tabR").append("<tr id='wait'><td colspan='3'>"+afficherImage(section.type)+" &nbsp;&nbsp; changement de ligne  :  "+secondsTominutes(section.duration)+" min</td>");
 		
        
 }        
@@ -178,19 +178,21 @@ $( "#resultPrevious" ).on('click',resultPrevious);
 //$("#favoris").on('click',favoris);
 
 $( "#newtineraire" ).on('click',newtineraire);
+$( "#newItineraireFooter" ).on('click',newtineraire);
+
 
 $('#depart').click(function(){
-   $("#footer").css("display", "none").fadeOut(2000);
+   $("#footerDisplay").css("display", "none").fadeOut(2000);
        });
 $("#depart").blur(function(){
-   $("#footer").css("display", "block");
+   $("#footerDisplay").css("display", "block");
           });
 
 $('#arrivee').click(function(){
-   $("#footer").css("display", "none").fadeOut(2000);
+   $("#footerDisplay").css("display", "none").fadeOut(2000);
        });
 $("#arrivee").blur(function(){
-   $("#footer").css("display", "block");
+   $("#footerDisplay").css("display", "block");
           });
 
 
@@ -248,11 +250,17 @@ val = localStorage.getItem(key);
 
 function newtineraire() 
 {
-	$('#newtineraire').empty();
+	
 	$('#tabR').empty();
+	$("#headerResult").empty();
 	$('#dateTime').empty();
+	$('#depart').val("");
+	$('#arrivee').val("");
 	$('#result').css('display','none');
 	$('#form').css('display','block');
+	$('#plustard').css('display','none');
+	
+	$('#firstpart').css('display','block');
 }
 
 function resultNext() 
@@ -381,7 +389,7 @@ function  goafter() {
 	var arriveea = $('#arrivee').val();
 	var dateTime = $('#dateTime').val();
 	var type = $('#type input:radio:checked').val();
-	
+	console.log(type);
 	//var date = $.formatDateTime('yyddmmThhii', new Date(dateTime));
 	//console.log($.formatDateTime('yyddmmThhii', new Date(dateTime)));
 	if(dateTime !='')

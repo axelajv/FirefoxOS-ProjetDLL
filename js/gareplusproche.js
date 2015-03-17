@@ -50,6 +50,8 @@ var Personne = L.icon({
   var crd = pos.coords;
   var Origine = L.latLng(crd.latitude, crd.longitude);
   var Min=0;
+  var Min2=0;
+  var Min3=0;
   var LongitudeMin;
   var LatitudeMin;
   var LongitudeMin2;
@@ -93,10 +95,12 @@ var Personne = L.icon({
 
 					//alert(val.Nom);
 				
-					if (Distance < Min || i==0) {
+					if (Distance < Min || Distance < Min2 || Distance < Min3 || i==0) {
 						
 						i=1;
-
+						
+						Min3=Min2;
+						Min2=Min;
 						Min=Distance;
 
 						LongitudeMin3=LongitudeMin2;
@@ -107,7 +111,7 @@ var Personne = L.icon({
 						LatitudeMin2=LatitudeMin;
 						LatitudeMin=val.Latitude;
 
-						Nom3=Nom2;
+						Nom3=Nom2;  
 						Nom2=Nom;
 						Nom=val.Nom;
 

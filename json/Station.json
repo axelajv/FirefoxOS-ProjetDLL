@@ -10325,24 +10325,9 @@
     "Longitude":2.310685
   },
   {
-    "Nom":"Le Plessis Chenet",
-    "Latitude":48.573808,
-    "Longitude":2.479469
-  },
-  {
-    "Nom":"Moulin Galant",
-    "Latitude":48.586357,
-    "Longitude":2.473337
-  },
-  {
     "Nom":"La Justice",
     "Latitude":48.563341,
     "Longitude":2.495933
-  },
-  {
-    "Nom":"Le Coudray-Montceaux",
-    "Latitude":48.566281,
-    "Longitude":2.49256
   },
   {
     "Nom":"Dourdan",
@@ -10390,14 +10375,14 @@
     "Longitude":2.450899
   },
   {
-    "Nom":"Évry",
-    "Latitude":48.634005,
-    "Longitude":2.4525
-  },
-  {
     "Nom":"Évry - Courcouronnes",
     "Latitude":48.625543,
     "Longitude":2.428347
+  },
+  {
+    "Nom":"Évry - Val-de-Seine",
+    "Latitude":48.634550,
+    "Longitude":2.452196
   },
   {
     "Nom":"La Ferté-Alais",
@@ -41593,11 +41578,6 @@
     "Nom":"HOTEL DE VILLE D'EZANVILLE",
     "Latitude":49.03168,
     "Longitude":2.361335
-  },
-  {
-    "Nom":"LA JUSTICE",
-    "Latitude":49.037191,
-    "Longitude":2.340849
   },
   {
     "Nom":"LES BOURGUIGNONS",
@@ -81575,24 +81555,9 @@
     "Longitude":2.462456
   },
   {
-    "Nom":"Le Plessis Chenet",
-    "Latitude":48.573808,
-    "Longitude":2.479469
-  },
-  {
-    "Nom":"Moulin Galant",
-    "Latitude":48.587154,
-    "Longitude":2.47349
-  },
-  {
     "Nom":"LE COUDRAY MONCEAUX LA JUSTICE",
     "Latitude":48.565271,
     "Longitude":2.488287
-  },
-  {
-    "Nom":"Le Coudray-Montceaux",
-    "Latitude":48.566118,
-    "Longitude":2.492713
   },
   {
     "Nom":"Dourdan",
@@ -81648,17 +81613,7 @@
     "Nom":"Le Bras de Fer",
     "Latitude":48.623332,
     "Longitude":2.451409
-  },
-  {
-    "Nom":"Évry",
-    "Latitude":48.634479,
-    "Longitude":2.45229
-  },
-  {
-    "Nom":"Évry - Courcouronnes",
-    "Latitude":48.626022,
-    "Longitude":2.428739
-  },
+  }, 
   {
     "Nom":"La Ferté-Alais",
     "Latitude":48.484957,
@@ -172585,11 +172540,6 @@
     "Longitude":2.340849
   },
   {
-    "Nom":"LA JUSTICE",
-    "Latitude":49.037047,
-    "Longitude":2.340631
-  },
-  {
     "Nom":"LES BOURGUIGNONS",
     "Latitude":49.034216,
     "Longitude":2.348612
@@ -176488,11 +176438,6 @@
     "Nom":"SQUARE CHARLES PERRAULT",
     "Latitude":49.004095,
     "Longitude":2.417023
-  },
-  {
-    "Nom":"VICTOR HUGO",
-    "Latitude":49.00603,
-    "Longitude":2.396796
   },
   {
     "Nom":"VICTOR HUGO",

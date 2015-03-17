@@ -1,6 +1,63 @@
+.ligne 
+{
+ background : transparent;
+ border-color: #E501BF;
+ border-width: 0 0 1px;
+ border-style : solid;
+ margin-left: 2%;
+ margin-right: 2%;
+ margin-top: 2%;
+ margin-bottom: 2%;
+  }
+ 
+.btn-primary
+{
+background: #F28F22;
+background: -webkit-linear-gradient( #FF6A4F, #D33B11); 
+background: -moz-linear-gradient( #FF6A4F, #D33B11); 
+background: -ms-linear-gradient( #FF6A4F, #D33B11); 
+background: -o-linear-gradient( #FF6A4F, #D33B11); 
+background: linear-gradient( #F28F22, #BD5D19);
+background : #E501BF;
+}
+
+.btn-primary:hover
+{
+background: #E256A0;
+}
+
+.btn-primary:active
+{
+background: #E256A0;
+}
+
+.btn-primary:visited 
+{
+background: #E256A0;
+}
+
+ #from
+ {
+ margin-left : 2%;
+margin-right : 1%;
+ }
+ 
+ #to
+ {
+ margin-left : 2%;
+margin-right : 1%;
+}
+
+ #headerResult{
+ 
+ margin-top: 10%;
+ 
+ }
+
 .buttonResult
 {
-   padding-left: 7%;
+   padding-left: 9%;
+  // margin-right : 7%;
  }
  
  
@@ -25,7 +82,14 @@ padding-left: 3%;
 {	
  padding-bottom : 0%;
 }
-  
+
+#tabR {
+
+margin-left : 2%;
+margin-right : 1%;
+
+}
+ 
 #tabR #wait
  {
  background-color: #E0E0E0 ;
@@ -52,6 +116,15 @@ padding-top: 25px;
 
 }
 
+
+#favoris{
+
+position:absolute;
+right:10px;
+top: 6%;
+
+}
+
 #partir 
 {
 //padding-top : 15 px;
@@ -60,9 +133,14 @@ padding-bottom: 3%;
 
 }
 
+#Newtineraire{
+
+}
+
 #result{
 
-padding-bottom:300px;
+padding-bottom:40%;
+
 }
 
 #plustard {

@@ -1,6 +1,8 @@
 ﻿
  var arrivee;
  var depart;
+ var departText;
+ var arriveeText;
 // Calcul de l'itinéraire
 function  Itineraire(depart,arrivee, date, type, url) {
 if(type!='' && url=='')
@@ -11,8 +13,9 @@ if(type!='' && url=='')
 
 else if(type=='' && url=='')
 {
-	var $MyUrl = 'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:TRN:SA:DUA8768100&to=stop_area:TRN:SA:DUA8754552&datetime='+date+'&max_duration_to_pt=3000';
-	//'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:'+depart+'&to=stop_area:'+arrivee+'&datetime='+date+'&max_duration_to_pt=3000';
+	var $MyUrl = 'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:'+depart+'&to=stop_area:'+arrivee+'&datetime='+date+'&max_duration_to_pt=3000';
+	//'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:TRN:SA:DUA8768100&to=stop_area:TRN:SA:DUA8754552&datetime='+date+'&max_duration_to_pt=3000';
+	
 	//
 	console.log($MyUrl);
 }
@@ -33,9 +36,10 @@ else if(url !='')
 		$('#result').css('display','block');
 		$('#form').css('display','none');
 		
-		//on vide les champs départ et arrivee
+		//on vide les champs départ et arrivee et date
 		$('#depart').val("");
 		$('#arrivee').val("");
+		$('#dateTime').empty();
 		
 		console.log(data);	
 		console.log(data.journeys[0].duration);
@@ -43,42 +47,50 @@ else if(url !='')
 		// Resultat
 		if(data.journeys.length>0) {
 		
-		$("#headerResult").append("<tr id='tab'><td>"+"d&eacute;part le : "+convertDate(data.journeys[0].departure_date_time)+"&nbsp;&nbsp; </td><td>"+" &nbsp;  arrivé le : "+convertDate(data.journeys[0].arrival_date_time)+"</td> </tr>");
-		$("#headerResult").append("<tr id='tab'><td>"+"dur&eacute;e du trajet : "+"</td><td id='tdLigne'>"+secondsTominutes(data.journeys[0].duration)+" minutes</td></tr>");
+		$("#headerResult").append("<tr><td><b>d&eacute;part le : &nbsp;&nbsp;</b> </td><td><b> &nbsp;  arrivé le : </b></td> </tr>");
+		$("#headerResult").append("<tr><td><b>"+convertDate(data.journeys[0].departure_date_time)+"&nbsp;&nbsp;</b> </td><td><b> &nbsp;"+convertDate(data.journeys[0].arrival_date_time)+"</b></td> </tr>");
+		$("#headerResult").append("<tr><td>"+"<b>dur&eacute;e du trajet : "+"&nbsp;"+secondsTominutes(data.journeys[0].duration)+" min </b> </td></tr>");
+		
+		
+		
+		$("#from").append("<b>Départ : </b>" + data.journeys[0].sections[0].from.name);
+		$("#to").append("<b>Arrivé : </b>" + data.journeys[0].sections[data.journeys[0].sections.length-1].to.name);
 		
 		$.each(data.journeys[0].sections, function(i, section) {
 			if(section.type == "crow_fly" && i==0)
 			{ return true;}
 			
+			
+			
 		switch(section.type) {
 		case "crow_fly":
 		
-			if (section.duration == "0")
-				$("#tabR").append("<tr id='tab'>d&eacute;part : <td> d</td><td id='tdLigne'>"+section.to.name+"</td></tr");
+			/*if (section.duration == "0")
+				$("#tabR").append("<tr id='tab1'> départ : <td> d</td><td>"+section.to.name+"</td></tr");
 			else
-			$("#tabR").append("<tr id='tab'><td>"+"marcher jusqu'&agrave; la station"+"</td><td id='tdLigne'>"+section.to.name+"</td>");
+			$("#tabR").append("<tr id='tab2'><td>"+"marcher jusqu'&agrave; la station"+"</td><td id='tdLigne'>"+section.to.name+"</td>");*/
 			break;
 		case "public_transport":
 				if(section.display_informations.commercial_mode=='Bus')
 				{
-					$("#tabR").append("<tr><td rowspan='3'>"+afficherImage(section.display_informations.commercial_mode)+" "+ section.display_informations.code +"</td><td>Montez à : "+section.from.name+"</td><td rowspan='3'>"+secondsTominutes(section.duration)+" min </td><tr><td> Direction : "+section.display_informations.direction+"</td></tr><tr><td> Descendez &agrave;  : "+section.to.name+"</td></tr>");
+					$("#tabR").append("<tr><td rowspan='3'>"+afficherImage(section.display_informations.commercial_mode)+" "+ section.display_informations.code +"</td><td><b>Montez à : </b>"+section.from.name+"</td><td rowspan='3'>"+secondsTominutes(section.duration)+" min </td><tr><td> Direction : "+section.display_informations.direction+"</td></tr><tr><td> Descendez &agrave;  : "+section.to.name+"</td></tr>");
 				}
 				else
-				$("#tabR").append("<tr><td rowspan='3'>"+afficherImage(section.display_informations.code)+"</td><td>Montez à : "+section.from.name+"</td><td rowspan='3'>"+secondsTominutes(section.duration)+" min </td><tr><td> Direction : "+section.display_informations.direction+"</td></tr><tr><td> Descendez &agrave;  : "+section.to.name+"</td></tr>");
+				$("#tabR").append("<tr><td rowspan='3'>"+afficherImage(section.display_informations.code)+"</td><td><b>Montez à : </b>"+section.from.name+"</td><td rowspan='3'>"+secondsTominutes(section.duration)+" min </td><tr><td> <b>Direction :</b> "+section.display_informations.direction+"</td></tr><tr><td><b> Descendez &agrave;  : </b>"+section.to.name+"</td></tr>");
 				break;
 				
 		case "waiting" :
 		
-			$("#tabR").append("<tr id='wait'><td colspan='3'>"+afficherImage(section.type)+" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+secondsTominutes(section.duration)+" minute(s)</td>");
+			$("#tabR").append("<tr id='wait'><td colspan='3'>"+afficherImage(section.type)+" &nbsp;&nbsp;&nbsp; Attendez &nbsp;&nbsp;&nbsp; "+secondsTominutes(section.duration)+" min</td>");
 			
 		break;
 		
 		case "street_network" :
 			if(section.mode=="walking")
-			$("#tabR").append("<tr id='tab'><td>"+afficherImage(section.mode)+"</td><td>"+"marcher jusqu'&agrave; la station : "+section.to.name+"</td><td id='tdLigne'>"+secondsTominutes(section.duration)+" minutes</td>");
+			$("#tabR").append("<tr id='tab3'><td>"+afficherImage(section.mode)+"</td><td>"+"<b>marcher jusqu'&agrave; la station :</b>"+section.to.name+"</td><td id='tdLigne'>"+secondsTominutes(section.duration)+" min</td>");
 		case "transfer" :
 			if(section.transfer_type=="walking")
-			$("#tabR").append("<tr id='tab'><td td colspan='3'>"+"changement de ligne  :  "+secondsTominutes(section.duration)+" minutes</td>");
+			$("#tabR").append("<tr><td colspan='3'>"+afficherImage(section.type)+" changement de ligne  :  "+secondsTominutes(section.duration)+" min</td>");
 		
        
 }        
@@ -92,7 +104,12 @@ else if(url !='')
 			$("#tabR").append("<p> Une erreur est survenue  : " /*+data.errors[]*/+"</p>");
 
            },
-          error: function(data) {console.log("salut!")}
+          error: function(statut) {
+		  console.log(statut);
+		  $('#result').css('display','block');
+		$('#form').css('display','none');
+		  $("#tabR").append("<p> Une erreur est survenue  : Aucun résultat n'a été trouvé " /*+data.errors[]*/+"</p>");
+		  console.log("salut!")}
           });
 		
         //result(data);
@@ -132,6 +149,11 @@ else if(url !='')
 		return "<img id='Imagewait' src='images/bus.png' alt='marchez' width='30' height='30'/>"
    }
    
+   else if(NomLigne=="transfer")
+   {
+		return "<img id='Imagewait' src='images/transfert.png' alt='marchez' width='30' height='30'/>"
+   }
+   
    }
   
   
@@ -153,6 +175,9 @@ $( "#partir" ).on('click',goafter);
 $( "#next" ).on('click',selectDate);
 $( "#resultNext" ).on('click',resultNext);
 $( "#resultPrevious" ).on('click',resultPrevious);
+//$("#favoris").on('click',favoris);
+
+$( "#newtineraire" ).on('click',newtineraire);
 
 var dateMin = new Date();
 dateMin.setDate(dateMin.getDate() -1);
@@ -174,6 +199,40 @@ $("#dtBox").DateTimePicker({
 });
 
 
+/*a finir
+function favoris(){
+//Save it in local storage and stay there
+
+if (window.localStorage) {
+//localtorage.setItem(depart,departText);
+//localStorage.setItem(arrivee,arriveeText);
+console.log('salut'arrivee);
+var url = 'https://api.navitia.io/v1/coverage/fr-idf/journeys?from=stop_area:'+depart+'&to=stop_area:'+arrivee+'&datetime='+date+'&max_duration_to_pt=3000;
+localStorage.setItem('url',url);
+}
+
+}
+
+ $(function() {
+ 
+ 	for (i=0; i<=localStorage.length-1; i++)
+{ 
+ 
+key = localStorage.key(i);
+val = localStorage.getItem(key); 
+}
+ 
+ });*/
+
+
+function newtineraire() 
+{
+	$('#newtineraire').empty();
+	$('#tabR').empty();
+	$('#dateTime').empty();
+	$('#result').css('display','none');
+	$('#form').css('display','block');
+}
 
 function resultNext() 
 {
@@ -194,25 +253,18 @@ function resultPrevious()
 
 function  go() {
 
-	/*var departval = $('#depart').val();
-	var arriveeval = $('#arrivee').val();
-	if(departval !='' || arriveeval != '')
+	departText = $('#depart').val();
+	arriveeText = $('#arrivee').val();
+	if(departText !='' || arriveeText != '')
 	{
-	console.log(depart,arrivee);*/
+	console.log(depart,arrivee);
 	var d = new Date();
 	var date = d.yyyymmddT();
-	//var date = d.toISOString();
-	/*date= date.replace(/:/gi, "");
-	date= date.replace(/z/gi, "");
-	date= date.replace(/-/gi, "");
-	date= date.replace(".", "");
-	date = date.substring(0, 13)*/
-	/*console.log(date);*/
 	Itineraire(depart,arrivee,date,'','');
-	/*}
+	}
 	
 	else
-		alert('veuillez renseigner correctement la station de départ et d\'arrivée');*/
+		alert('veuillez renseigner correctement la station de départ et d\'arrivée');
 	
 	
 }
@@ -304,8 +356,8 @@ function result(data) {
 
 function  goafter() {
 
-	//var depart = $('#depart').val();
-	//var arrivee = $('#arrivee').val();
+	var departa = $('#depart').val();
+	var arriveea = $('#arrivee').val();
 	var dateTime = $('#dateTime').val();
 	var type = $('#type input:radio:checked').val();
 	
@@ -335,7 +387,7 @@ var depart = $('#depart').val();
 	}
 	
 	else
-		alert('veuillez renseigner correctement la station de d�part et d\'arriv�e');
+		alert('veuillez renseigner correctement la station de départ et d\'arrivée');
 
 }
 

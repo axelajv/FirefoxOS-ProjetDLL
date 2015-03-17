@@ -40,7 +40,7 @@ var TrainV = L.icon({
 
 
 var Personne = L.icon({
-    iconUrl: 'images/logo2.png',
+    iconUrl: 'images/Personne.png',
     iconRetinaUrl: 'images/Personne.png',
     iconSize: [35, 50],
     iconAnchor: [15, 50],

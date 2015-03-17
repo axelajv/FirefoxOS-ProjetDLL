@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
     <link rel="stylesheet" href="css/leaflet-routing-machine.css" />
     <link rel="stylesheet" href="css/gareplusproche.css" />
-    <title>NomAPPLI</title>
+    <title>Transimetro</title>
        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
           <!--[if lt IE 9]>
@@ -30,33 +30,34 @@
 
 
 
-    <nav class="navbar navbar-fixed-bottom">
-    <div class="container-fluid">
-      <div class="row">
-        <div id="bloc-accueil-footer" class="col-xs-3">
-          <button  type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-          </button>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row">
+        <div  class="col-xs-3">
+            <a  href="plan.html">
+               <img class='footerIcon' src="images/IconPlan.png" />
+            </a>
         </div>
-        <div id="bloc-accueil-footer" class="col-xs-3"> 
-          <button type="button" class="btn btn-default" aria-label="Left Align">
-            <span  class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
-          </button>
+        <div class="col-xs-3"> 
+           <a  href="next-train.html">
+              <img class='footerIcon' src="images/IconProchainT.png" />
+            </a>
+         
         </div>
-        <div id="bloc-accueil-footer" class="col-xs-3">
-          <button type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
-          </button>
+        <div  class="col-xs-3">
+           <a  href="itineraire.html">
+               <img class='footerIcon' src="images/IconIti.png" />
+            </a>
         </div>
-        <div id="bloc-accueil-footer" class="col-xs-3">
-          <button type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-          </button>
+        <div class="col-xs-3">
+           <a  href="gareplusproche.html">
+               <img class='footerIcon' src="images/IconGareP.png" />
+            </a>
+          
         </div>
       </div>
     </div>
   </nav>
-
 	
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
     <script src="dist/leaflet-routing-machine.js"></script>
@@ -139,7 +140,7 @@
 
 				//it.setWaypoints([]);
 			
-					$('#titre').append('<h1> '+ Nom +' </h1>');
+					$('#titre').append("<h1 id='Hti'>"+ Nom +"</h1>");
 				 	
 			  });
 			  

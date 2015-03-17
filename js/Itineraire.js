@@ -47,9 +47,9 @@ else if(url !='')
 		// Resultat
 		if(data.journeys.length>0) {
 		
-		$("#headerResult").append("<tr><td><b>d&eacute;part le : &nbsp;&nbsp;</b> </td><td><b> &nbsp;  arrivé le : </b></td> </tr>");
-		$("#headerResult").append("<tr><td><b>"+convertDate(data.journeys[0].departure_date_time)+"&nbsp;&nbsp;</b> </td><td><b> &nbsp;"+convertDate(data.journeys[0].arrival_date_time)+"</b></td> </tr>");
-		$("#headerResult").append("<tr><td>"+"<b>dur&eacute;e du trajet : "+"&nbsp;"+secondsTominutes(data.journeys[0].duration)+" min </b> </td></tr>");
+		$("#headerResult").append("<tr><td><b>D&eacute;part le : &nbsp;&nbsp;</b> </td><td><b> &nbsp;  Arrivé le : </b></td> </tr>");
+		$("#headerResult").append("<tr><td>"+convertDate(data.journeys[0].departure_date_time)+"&nbsp;&nbsp; </td><td> &nbsp;"+convertDate(data.journeys[0].arrival_date_time)+"</td> </tr>");
+		$("#headerResult").append("<tr><td>"+"<b>Dur&eacute;e du trajet : </b>"+"&nbsp;"+secondsTominutes(data.journeys[0].duration)+" min  </td></tr>");
 		
 		
 		
@@ -252,6 +252,8 @@ function newtineraire()
 {
 	
 	$('#tabR').empty();
+	$("#from").empty();
+	$("#to").empty();
 	$("#headerResult").empty();
 	$('#dateTime').empty();
 	$('#depart').val("");
@@ -267,6 +269,8 @@ function resultNext()
 {
 	$('#headerResult').empty();
 	$('#tabR').empty();
+	$("#from").empty();
+	$("#to").empty();
 	url = $("#hiddenNext").val();
 	Itineraire('','','','',url);;
 }
@@ -275,6 +279,8 @@ function resultPrevious()
 {
 	$('#headerResult').empty();
 	$('#tabR').empty();
+	$("#from").empty();
+	$("#to").empty();
 	url = $("#hiddenPrevious").val();
 	Itineraire('','','','',url);
 }

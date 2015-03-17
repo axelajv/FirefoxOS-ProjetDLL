@@ -5,6 +5,7 @@ $(document).ready(function(){
           $("input").blur(function(){
               $("#footer").css("display", "block");
           });
+
       });
 
 

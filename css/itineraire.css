@@ -21,6 +21,11 @@ background: linear-gradient( #F28F22, #BD5D19);
 background : #E501BF;
 }
 
+#footer{
+
+margin-top:-25px;
+
+}
 .btn-primary:hover
 {
 background: #E256A0;

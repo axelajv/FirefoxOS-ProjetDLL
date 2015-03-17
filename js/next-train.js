@@ -1,4 +1,14 @@
 
+
+$(document).ready(function(){
+          $("input").click(function(){
+              $("#footer").css("display", "none").fadeOut(2000);
+          });
+          $("input").blur(function(){
+              $("#footer").css("display", "block");
+          });
+      });  
+  
   $(function() {
 
 
@@ -85,7 +95,7 @@ function nav(IdStation){
 
             } else {
 
-                   $("#tabR").append("<tr id='tab'><td id='tdHeure'>"+heure+"</td><td id='tdLigne'>"+dep.route.line.code+"</td><td id='tdNom'>"+dep.route.direction.stop_point.name+"</td><td id='tdListe'>"+dep.route.line.name+"</td></tr>");
+                  $("#tabR").append("<tr id='tab'><td id='tdHeure'>"+heure+"</td><td id='tdLigne'>"+dep.route.line.code+"</td><td id='tdNom'>"+dep.route.direction.stop_point.name+"</td><td id='tdListe'>"+dep.route.line.name+"</td></tr>");
                        
             }
 

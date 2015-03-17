@@ -179,6 +179,27 @@ $( "#resultPrevious" ).on('click',resultPrevious);
 
 $( "#newtineraire" ).on('click',newtineraire);
 
+$('#depart').click(function(){
+   $("#footer").css("display", "none").fadeOut(2000);
+       });
+$("#depart").blur(function(){
+   $("#footer").css("display", "block");
+          });
+
+$('#arrivee').click(function(){
+   $("#footer").css("display", "none").fadeOut(2000);
+       });
+$("#arrivee").blur(function(){
+   $("#footer").css("display", "block");
+          });
+
+
+
+	  
+	  
+
+
+
 var dateMin = new Date();
 dateMin.setDate(dateMin.getDate() -1);
 var dateMax = new Date();
